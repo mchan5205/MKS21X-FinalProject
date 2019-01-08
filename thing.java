@@ -59,19 +59,19 @@ public class thing {
 			terminal.applyBackgroundColor(Terminal.Color.RED);
 			terminal.applyForegroundColor(Terminal.Color.YELLOW);
 			terminal.applySGR(Terminal.SGR.ENTER_BOLD);
-			terminal.putCharacter(' ');
-			terminal.putCharacter(' ');
+			terminal.putCharacter('-');
+			terminal.putCharacter('-');
 			terminal.putCharacter('\u262d');
-			terminal.putCharacter(' ');
+			terminal.putCharacter('-');
 			terminal.moveCursor(size.getColumns()-5,6);
-			terminal.putCharacter(' ');
-			terminal.putCharacter(' ');
-			terminal.putCharacter(' ');
-			terminal.putCharacter(' ');
+			terminal.putCharacter('-');
+			terminal.putCharacter('-');
+			terminal.putCharacter('-');
+			terminal.putCharacter('-');
 			terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
 			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
 
-			Key key = terminal.readInput();
+Key key = terminal.readInput();
 
 			if (key != null)
 			{
