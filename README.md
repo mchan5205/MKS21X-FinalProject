@@ -1,6 +1,6 @@
 1/10/19
 - created Monster.java
-- editted Combatable.java
+- added to Combatable.java
 - finished player.java
 - started user interface
 
