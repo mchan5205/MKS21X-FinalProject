@@ -1,27 +1,34 @@
-public class Player[
+public class Player{
   private int hP;
   private int atk;
   private int exp;
   private String name;
 
-  public Player(String nam; int health; int attack;) {
+  public Player(String nam, int health, int attack) {
     hP = health;
     atk = attack;
-    name = name;
+    name = nam;
     exp = 0;
   }
 
-  public class getName {
+  public String getName() {
      return name;
   }
-  public class getExp {
+  public int getExp() {
      return exp;
   }
-  public class getHP {
+  public int getHP() {
      return hP;
   }
-  public class getAtk {
+  public int getAtk() {
      return atk;
- }
+  }
+  public void gainExp(int xp){
+     exp += xp;
+  }
 
-]
+  public void changeHP(int hit){
+    hP  += hit;
+  }
+
+}
