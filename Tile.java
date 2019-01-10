@@ -12,4 +12,7 @@ public class Tile{
   public boolean isLoot(){
     return thing instanceof Loot;
   }
+  public void setTile(Object x){
+    thing = x;
+  }
 }
