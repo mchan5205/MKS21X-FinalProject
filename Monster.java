@@ -17,4 +17,10 @@ public class Monster{
   public int getAtk(){
     return atk;
   }
+  public void attack(Combatable other){
+    other.changeHP(-1 * this.getAtk());
+  }
+  public void changeHP(int hp){
+    hP = hP - hp;
+  }
 }
