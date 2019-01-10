@@ -10,6 +10,7 @@ public class Player[
     name = name;
     exp = 0;
   }
+
   public class getName {
      return name;
   }
