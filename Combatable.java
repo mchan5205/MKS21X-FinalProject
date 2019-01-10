@@ -3,4 +3,5 @@ public interface Combatable{
   int atk;
   String name;
   void attack(Combatable other);
+  void changeHP(int hp);
 }
