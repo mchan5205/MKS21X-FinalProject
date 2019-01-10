@@ -1,3 +1,6 @@
+1/9/19
+- created Grid.java
+- started Combatable interface
 
 1/8/19
 - created Tile.java
