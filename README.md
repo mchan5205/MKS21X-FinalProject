@@ -1,3 +1,7 @@
+1/10/19
+- created Monster.java
+- editted Combatable.java
+
 1/9/19
 - created Grid.java
 - started Combatable interface
