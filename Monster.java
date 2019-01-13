@@ -1,4 +1,4 @@
-public class Monster implements Monster{
+public class Monster implements Combatable{
   private int hP;
   private int atk;
   private String name;
