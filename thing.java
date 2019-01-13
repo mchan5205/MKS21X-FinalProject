@@ -27,7 +27,7 @@ public class thing {
 	public static void main(String[] args) {
     
     Player a = new Player("bob",10,5);           //Creates player
-    Grid test = new Grid(a);                     //CREATES TEST GRID
+ // Grid test = new Grid(a);                     //CREATES TEST GRID
     
 		int x = 13;
 		int y = 13;
@@ -84,40 +84,43 @@ Key key = terminal.readInput();
 					running = false;
 				}
 
-if (key.getKind() == Key.Kind.ArrowLeft) {
+        if (key.getKind() == Key.Kind.ArrowLeft) {
           
-          if (test.getTile(12,13).isPassable() == true) { //checks if the thing's passable
+      //    if (test.getTile(x-1,y).isPassable() == true) { //checks if the thing's passable
           
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
 					x--;
             
-          }
+      //    }
        }
 
 				if (key.getKind() == Key.Kind.ArrowRight) {
           
-          if (test.getTile(x+1,y).isPassable() == true) {
+      //    if (test.getTile(x+1,y).isPassable() == true) {
           
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
 					x++;
             
-          }
+      //    }
             
 				}
 
 				if (key.getKind() == Key.Kind.ArrowUp) {
+					//if (test.getTile(x,y-1).isPassable() == true) {
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
 					y--;
+          //}
 				}
 
 				if (key.getKind() == Key.Kind.ArrowDown) {
+      //    if (test.getTile(x,y+1).isPassable() == true) {
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
 					y++;
-				}
+			//	}
 				//space moves it diagonally
 				if (key.getCharacter() == ' ') {
 					terminal.moveCursor(x,y);
