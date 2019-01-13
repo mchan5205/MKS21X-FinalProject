@@ -26,9 +26,11 @@ public class Player implements Combatable{
   public void gainExp(int xp){
      exp += xp;
   }
-
+  public void attack(Combatable other){
+    other.changeHP(-1 * this.atk);
+  }
   public void changeHP(int hit){
-    hP  += hit;
+    hP = hP - hit;
   }
 
 }

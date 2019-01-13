@@ -3,7 +3,10 @@ public class Monster implements Combatable{
   private int atk;
   private String name;
   private int expReward;
-  public Monster(){
+  public Monster(String nam, int health, int attack){
+    hP = health;
+    atk = attack;
+    name = nam;
   }
   public int getExp(){
     return expReward;
