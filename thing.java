@@ -121,6 +121,7 @@ Key key = terminal.readInput();
 					terminal.putCharacter(' ');
 					y++;
 			//	}
+        }
 				//space moves it diagonally
 				if (key.getCharacter() == ' ') {
 					terminal.moveCursor(x,y);
