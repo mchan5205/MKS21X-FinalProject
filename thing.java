@@ -27,7 +27,8 @@ public class thing {
 	public static void main(String[] args) {
     
     Player a = new Player("bob",10,5);           //Creates player
-
+    Grid test = new Grid(a);                     //CREATES TEST GRID
+    
 		int x = 13;
 		int y = 13;
 
@@ -83,22 +84,27 @@ Key key = terminal.readInput();
 					running = false;
 				}
 
-				if (key.getKind() == Key.Kind.ArrowLeft) {
+if (key.getKind() == Key.Kind.ArrowLeft) {
           
-         // if (Tile.getTile(x-1,y).isPassable == true) { //checks if the thing's passable
+          if (test.getTile(12,13).isPassable() == true) { //checks if the thing's passable
           
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
 					x--;
             
-          //}
-          
-				}
+          }
+       }
 
 				if (key.getKind() == Key.Kind.ArrowRight) {
+          
+          if (test.getTile(x+1,y).isPassable() == true) {
+          
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
 					x++;
+            
+          }
+            
 				}
 
 				if (key.getKind() == Key.Kind.ArrowUp) {
