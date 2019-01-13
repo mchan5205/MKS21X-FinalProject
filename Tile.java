@@ -1,7 +1,9 @@
 public class Tile{
   private Object thing;
-  public Tile(Object thething){
+  private boolean passable;
+  public Tile(Object thething, boolean pass){
     thing = thething;
+    passable = pass;
   }
   public boolean isMonster(){
     return thing instanceof Monster;
@@ -14,5 +16,8 @@ public class Tile{
   }
   public void setTile(Object x){
     thing = x;
+  }
+  public boolean isPassable(){
+    return passable;
   }
 }
