@@ -1,8 +1,11 @@
 public class Tile{
-  private Object thing;
+  private Combatable thing;
   private boolean passable;
-  public Tile(Object thething, boolean pass){
+  public Tile(Combatable thething, boolean pass){
     thing = thething;
+    passable = pass;
+  }
+  public Tile(boolean pass){
     passable = pass;
   }
   public boolean isMonster(){
@@ -10,9 +13,6 @@ public class Tile{
   }
   public boolean isPlayer(){
     return thing instanceof Player;
-  }
-  public boolean isLoot(){
-    return thing instanceof Loot;
   }
   public void setTile(Object x){
     thing = x;
