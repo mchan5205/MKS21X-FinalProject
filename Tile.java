@@ -14,7 +14,7 @@ public class Tile{
   public boolean isPlayer(){
     return thing instanceof Player;
   }
-  public void setTile(Object x){
+  public void setTile(Combatable x){
     thing = x;
   }
   public boolean isPassable(){

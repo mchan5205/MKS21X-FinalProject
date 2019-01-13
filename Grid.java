@@ -1,7 +1,7 @@
 public class Grid{
   private Tile[][] tiles;
   public Grid(Player d){
-    tiles = new Object[27][27];
+    tiles = new Tile[27][27];
     for (int i = 0; i < 27; i++){
       for (int x = 0 ;i < 27; i++){
         tiles[i][x] = new Tile(true);

@@ -1,4 +1,4 @@
-public class Player{
+public class Player implements Combatable{
   private int hP;
   private int atk;
   private int exp;
