@@ -28,8 +28,8 @@ public class thing {
     
     Player a = new Player("bob",10,5);           //Creates player
 
-		int x = 10;
-		int y = 10;
+		int x = 13;
+		int y = 13;
 
 		Terminal terminal = TerminalFacade.createTextTerminal();
 		terminal.enterPrivateMode();
@@ -44,7 +44,7 @@ public class thing {
 
 		while(running){
 
-			terminal.moveCursor(x,y);
+			terminal.moveCursor(x,y);  //STARTING POSITION OF CURSOR? You can change them up there^^^
 			terminal.applyBackgroundColor(Terminal.Color.WHITE);
 			terminal.applyForegroundColor(Terminal.Color.BLACK);
 			//applySGR(a,b) for multiple modifiers (bold,blink) etc.
@@ -84,9 +84,15 @@ Key key = terminal.readInput();
 				}
 
 				if (key.getKind() == Key.Kind.ArrowLeft) {
+          
+         // if (Tile.getTile(x-1,y).isPassable == true) { //checks if the thing's passable
+          
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
 					x--;
+            
+          //}
+          
 				}
 
 				if (key.getKind() == Key.Kind.ArrowRight) {
@@ -113,21 +119,12 @@ Key key = terminal.readInput();
 					y++;
 					x++;
 				}
-				putString(1,4,terminal,"["+key.getCharacter() +"]");
-				putString(1,1,terminal,key+"        ");//to clear leftover letters pad withspaces
+				//putString(1,4,terminal,"["+key.getCharacter() +"]");
+				//putString(1,1,terminal,key+"        ");//to clear leftover letters pad withspaces
 			}
 
-			//DO EVEN WHEN NO KEY PRESSED:
-			long tEnd = System.currentTimeMillis();
-			long millis = tEnd - tStart;
-      //int health = a.getHP();
-			putString(1,2,terminal,"Health "+a.getHP() + " Attack "+ a.getAtk() + " Experience "+ a.getExp());
-			/*if(millis/1000 > lastSecond){
-				lastSecond = millis / 1000;
-				//one second has passed.
-				putString(1,3,terminal,"Seconds since start of program: "+lastSecond);
+			putString(1,2,terminal,"Health "+a.getHP() + " Attack "+ a.getAtk() + " Experience "+ a.getExp()); //Player UI: Health, Attack, Exp
 
-			}*/
 
 
 		}
