@@ -25,7 +25,8 @@ public class thing {
 		}
 	}
 	public static void main(String[] args) {
-
+    
+    Player a = new Player("bob",10,5);           //Creates player
 
 		int x = 10;
 		int y = 10;
@@ -55,7 +56,7 @@ public class thing {
 			terminal.applySGR(Terminal.SGR.RESET_ALL);
 
 
-			terminal.moveCursor(size.getColumns()-5,5);
+			/*terminal.moveCursor(size.getColumns()-5,5);
 			terminal.applyBackgroundColor(Terminal.Color.RED);
 			terminal.applyForegroundColor(Terminal.Color.YELLOW);
 			terminal.applySGR(Terminal.SGR.ENTER_BOLD);
@@ -69,7 +70,7 @@ public class thing {
 			terminal.putCharacter('-');
 			terminal.putCharacter('-');
 			terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
+			terminal.applyForegroundColor(Terminal.Color.DEFAULT);*/
 
 Key key = terminal.readInput();
 
@@ -119,13 +120,14 @@ Key key = terminal.readInput();
 			//DO EVEN WHEN NO KEY PRESSED:
 			long tEnd = System.currentTimeMillis();
 			long millis = tEnd - tStart;
-			putString(1,2,terminal,"Milliseconds since start of program: "+millis);
-			if(millis/1000 > lastSecond){
+      //int health = a.getHP();
+			putString(1,2,terminal,"Health "+a.getHP() + " Attack "+ a.getAtk() + " Experience "+ a.getExp());
+			/*if(millis/1000 > lastSecond){
 				lastSecond = millis / 1000;
 				//one second has passed.
 				putString(1,3,terminal,"Seconds since start of program: "+lastSecond);
 
-			}
+			}*/
 
 
 		}
