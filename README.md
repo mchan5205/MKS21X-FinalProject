@@ -1,3 +1,7 @@
+1/13/19
+- added user interface
+- worked on walking
+
 1/10/19
 - created Monster.java
 - added to Combatable.java
