@@ -1,7 +1,7 @@
 public class Tile{
-  private Combatable thing;
+  private Object thing;
   private boolean passable;
-  public Tile(Combatable thething, boolean pass){
+  public Tile(Object thething, boolean pass){
     thing = thething;
     passable = pass;
   }
@@ -14,7 +14,7 @@ public class Tile{
   public boolean isPlayer(){
     return thing instanceof Player;
   }
-  public void setTile(Combatable x){
+  public void setTile(Object x){
     thing = x;
   }
   public boolean isPassable(){
