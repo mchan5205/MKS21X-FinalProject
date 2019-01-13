@@ -57,22 +57,6 @@ public class thing {
 			terminal.applySGR(Terminal.SGR.RESET_ALL);
 
 
-			/*terminal.moveCursor(size.getColumns()-5,5);
-			terminal.applyBackgroundColor(Terminal.Color.RED);
-			terminal.applyForegroundColor(Terminal.Color.YELLOW);
-			terminal.applySGR(Terminal.SGR.ENTER_BOLD);
-			terminal.putCharacter('-');
-			terminal.putCharacter('-');
-			terminal.putCharacter('\u262d');
-			terminal.putCharacter('-');
-			terminal.moveCursor(size.getColumns()-5,6);
-			terminal.putCharacter('-');
-			terminal.putCharacter('-');
-			terminal.putCharacter('-');
-			terminal.putCharacter('-');
-			terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-			terminal.applyForegroundColor(Terminal.Color.DEFAULT);*/
-
 Key key = terminal.readInput();
 
 			if (key != null)
