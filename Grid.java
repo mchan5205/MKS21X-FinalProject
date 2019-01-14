@@ -71,6 +71,14 @@ public class Grid{
       }
     }
     tiles[13][13] = new Tile(d, true);
+    for(int i = 0; i < 27; i++){
+      tiles[i][0] = new Tile(new Empty(), false);
+      tiles[i][26] = new Tile(new Empty(), false);
+    }
+    for(int i = 0; i < 27; i++){
+      tiles[0][i] = new Tile(new Empty(), false);
+      tiles[26][i] = new Tile(new Empty(), false);
+    }
   }
   public Tile getTile(int x, int y){
     return tiles[x][y];
