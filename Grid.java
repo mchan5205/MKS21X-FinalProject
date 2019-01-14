@@ -8,7 +8,6 @@ public class Grid{
         tiles[i][x] = new Tile(new Empty(), true);
       }
     }
-    /**/
     for (int i = 0; i < 27; i++){
       tiles[i][3] = new Tile(new Empty(), false);
     }
@@ -45,7 +44,6 @@ public class Grid{
     for (int i = 0; i < 27; i++){
       tiles[23][i] = new Tile(new Empty(), false);
     }
-    /**/
     Random t = new Random();
     for(int w = 4; w < 23; w = w + 9){
       for (int h = 4; h < 23; h = h + 9){
@@ -53,8 +51,6 @@ public class Grid{
         int width;
         height = Math.abs(t.nextInt() % 3) + 2;
         width = Math.abs(t.nextInt() % 3) + 2;
-        System.out.println(height);
-        System.out.println(width);
         for (int y = w - width; y <= w + width; y++){
           tiles[h + height][y] = new Tile(new Empty(), false);
           tiles[h - height][y] = new Tile(new Empty(), false);
