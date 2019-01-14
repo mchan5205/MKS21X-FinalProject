@@ -25,7 +25,7 @@ public class thing {
 		}
 	}
 	public static void main(String[] args) {
-    
+
 		Terminal terminal = TerminalFacade.createTextTerminal();
 		terminal.enterPrivateMode();
 
@@ -41,7 +41,7 @@ public class thing {
     Grid b = new Grid(a);
     for(int i = 0; i < 27; i++){
       for (int z = 0; z < 27; z++){
-        if (b.getTile(i, z).isPassable()){
+        if (b.getTile(z, i).isPassable()){
           terminal.moveCursor(z,i);
 					terminal.putCharacter(' ');
         }
@@ -51,11 +51,11 @@ public class thing {
         }
       }
     }
-    
+
     int x = 13;
 		int y = 13;
 
-    
+
 		while(running){
 
 			terminal.moveCursor(x,y);  //STARTING POSITION OF CURSOR? You can change them up there^^^
@@ -82,26 +82,26 @@ Key key = terminal.readInput();
 				}
 
         if (key.getKind() == Key.Kind.ArrowLeft) {
-          
+
           if (b.getTile(x-1,y).isPassable()) { //checks if the thing's passable
-          
+
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
 					x--;
-            
+
           }
        }
 
 				if (key.getKind() == Key.Kind.ArrowRight) {
-          
+
           if (b.getTile(x+1,y).isPassable()) {
-          
+
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
 					x++;
-            
+
           }
-            
+
 				}
 
 				if (key.getKind() == Key.Kind.ArrowUp) {
