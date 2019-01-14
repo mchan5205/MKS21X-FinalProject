@@ -83,7 +83,7 @@ Key key = terminal.readInput();
 
         if (key.getKind() == Key.Kind.ArrowLeft) {
           
-          if (b.getTile(x-1,y).isPassable() == true) { //checks if the thing's passable
+          if (b.getTile(x-1,y).isPassable()) { //checks if the thing's passable
           
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
@@ -94,7 +94,7 @@ Key key = terminal.readInput();
 
 				if (key.getKind() == Key.Kind.ArrowRight) {
           
-          if (b.getTile(x+1,y).isPassable() == true) {
+          if (b.getTile(x+1,y).isPassable()) {
           
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
@@ -105,7 +105,7 @@ Key key = terminal.readInput();
 				}
 
 				if (key.getKind() == Key.Kind.ArrowUp) {
-					if (b.getTile(x,y-1).isPassable() == true) {
+					if (b.getTile(x,y-1).isPassable()) {
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
 					y--;
@@ -113,19 +113,19 @@ Key key = terminal.readInput();
 				}
 
 				if (key.getKind() == Key.Kind.ArrowDown) {
-          if (b.getTile(x,y+1).isPassable() == true) {
+          if (b.getTile(x,y+1).isPassable()) {
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
 					y++;
 				}
         }
 				//space moves it diagonally
-				if (key.getCharacter() == ' ') {
+		/*		if (key.getCharacter() == ' ') {
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
 					y++;
 					x++;
-				}
+				}         */
 				//putString(1,4,terminal,"["+key.getCharacter() +"]");
 				//putString(1,1,terminal,key+"        ");//to clear leftover letters pad withspaces
 			}
