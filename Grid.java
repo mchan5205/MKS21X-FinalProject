@@ -50,4 +50,7 @@ public class Grid{
   public Tile getTile(int x, int y){
     return tiles[x][y];
   }
+  public void setTile(int x, int y, Tile z){
+    tiles[x][y] = z;
+  }
 }
