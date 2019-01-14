@@ -1,3 +1,6 @@
+1/14/19
+- changed wall color
+
 1/13/19
 - added user interface
 - added walking
