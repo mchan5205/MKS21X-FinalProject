@@ -1,6 +1,6 @@
 1/13/19
 - added user interface
-- worked on walking
+- added walking
 - added random room generation
 - added boolean to Tile to indicate whetehr it is a wall or not
 - added Empty class
