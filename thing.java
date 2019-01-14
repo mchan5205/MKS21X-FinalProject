@@ -47,7 +47,9 @@ public class thing {
         }
         else{
           terminal.moveCursor(z,i);
-					terminal.putCharacter('x');
+			terminal.applyBackgroundColor(Terminal.Color.WHITE);
+			terminal.putCharacter(' ');
+			terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
         }
       }
     }
