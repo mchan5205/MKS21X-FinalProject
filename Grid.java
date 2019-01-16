@@ -5,25 +5,26 @@ public class Grid{
     tiles = new Tile[45][27];
     for (int i = 0; i < 45; i++){
       for (int x = 0 ;x < 27; x++){
-        tiles[i][x] = new Tile(new Empty(), true);
+        tiles[i][x] = new Tile(new Empty(), false);
       }
     }
-    for (int i = 0; i < 44; i++){
+    /*
+    for (int i = 0; i < 45; i++){
       tiles[i][3] = new Tile(new Empty(), false);
     }
-    for (int i = 0; i < 44; i++){
+    for (int i = 0; i < 45; i++){
       tiles[i][5] = new Tile(new Empty(), false);
     }
-    for (int i = 0; i < 44; i++){
+    for (int i = 0; i < 45; i++){
       tiles[i][12] = new Tile(new Empty(), false);
     }
-    for (int i = 0; i < 44; i++){
+    for (int i = 0; i < 45; i++){
       tiles[i][14] = new Tile(new Empty(), false);
     }
-    for (int i = 0; i < 44; i++){
+    for (int i = 0; i < 45; i++){
       tiles[i][21] = new Tile(new Empty(), false);
     }
-    for (int i = 0; i < 44; i++){
+    for (int i = 0; i < 45; i++){
       tiles[i][23] = new Tile(new Empty(), false);
     }
     for (int i = 0; i < 27; i++){
@@ -39,25 +40,45 @@ public class Grid{
       tiles[23][i] = new Tile(new Empty(), false);
     }
     for (int i = 0; i < 27; i++){
-      tiles[34][i] = new Tile(new Empty(), false);
-    }
-    for (int i = 0; i < 27; i++){
       tiles[36][i] = new Tile(new Empty(), false);
     }
+    for (int i = 0; i < 27; i++){
+      tiles[38][i] = new Tile(new Empty(), false);
+    }
+    */
+    for (int i = 0; i < 45; i++){
+      tiles[i][4] = new Tile(new Empty(), true);
+    }
+    for (int i = 0; i < 45; i++){
+      tiles[i][13] = new Tile(new Empty(), true);
+    }
+    for (int i = 0; i < 45; i++){
+      tiles[i][22] = new Tile(new Empty(), true);
+    }
+    for (int i = 0; i < 27; i++){
+      tiles[7][i] = new Tile(new Empty(), true);
+    }
+    for (int i = 0; i < 27; i++){
+      tiles[22][i] = new Tile(new Empty(), true);
+    }
+    for (int i = 0; i < 27; i++){
+      tiles[37][i] = new Tile(new Empty(), true);
+    }
+
     Random t = new Random();
-    for(int w = 7; w < 46; w = w + 15){
+    for(int w = 7; w < 44; w = w + 15){
       for (int h = 4; h < 23; h = h + 9){
         int height;
         int width;
         height = Math.abs(t.nextInt() % 3) + 2;
         width = Math.abs(t.nextInt() % 5) + 2;
-        for (int y = w - width; y<= h + height; y++){
+        for (int y = h - height; y <= h + height; y++){
           tiles[w + width][y] = new Tile(new Empty(), false);
           tiles[w - width][y] = new Tile(new Empty(), false);
         }
-        for (int x = h - height; x <= w + width; x++){
+        for (int x = w - width; x <= w + width; x++){
           tiles[x][h + height] = new Tile(new Empty(), false);
-          tiles[x][h + height] = new Tile(new Empty(), false);
+          tiles[x][h - height] = new Tile(new Empty(), false);
         }
         for (int x = h - height + 1; x < h + height; x++){
           for (int y = w - width + 1; y < w + width; y++){
@@ -70,7 +91,6 @@ public class Grid{
         tiles[w][h - height] = new Tile(new Empty(), true);
       }
     }
-    tiles[22][13] = new Tile(d, true);
     for(int i = 0; i < 45; i++){
       tiles[i][0] = new Tile(new Empty(), false);
       tiles[i][26] = new Tile(new Empty(), false);

@@ -37,10 +37,10 @@ public class thing {
 		long tStart = System.currentTimeMillis();
 		long lastSecond = 0;
 
-        Player a = new Player("bob",10,5);           //Creates player
+    Player a = new Player("bob",10,5);           //Creates player
     Grid b = new Grid(a);
     for(int i = 0; i < 27; i++){
-      for (int z = 0; z < 27; z++){
+      for (int z = 0; z < 45; z++){
         if (b.getTile(z, i).isPassable()){
           terminal.moveCursor(z,i);
 					terminal.putCharacter(' ');
@@ -54,7 +54,7 @@ public class thing {
       }
     }
 
-    int x = 13;
+    int x = 22;
 		int y = 13;
 
 
