@@ -1,3 +1,9 @@
+1/16/19
+- grid size increased
+
+1/15/19
+- started increasing grid size
+
 1/14/19
 - changed wall color
 
