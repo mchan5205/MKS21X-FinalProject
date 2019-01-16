@@ -14,6 +14,11 @@ public class Tile{
   public boolean isPlayer(){
     return thing instanceof Player;
   }
+
+  public boolean isStairs(){
+    return thing instanceof Stairs;
+  }
+
   public void setTile(Object x){
     thing = x;
   }

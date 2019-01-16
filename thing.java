@@ -57,6 +57,9 @@ public class thing {
     int x = 13;
 		int y = 13;
 
+//NEW STUFF
+    b.getTile(12,13).setTile(Stairs);
+//NEW STUFF STAIRS TEST
 
 		while(running){
 
@@ -103,7 +106,25 @@ Key key = terminal.readInput();
 					x++;
 
           }
-
+///NEW STUFF
+					if (b.getTile(x+1,y).isStairs()){ //DETECT STAIRS
+						Grid bb = new Grid(a);
+				    for(int i = 0; i < 27; i++){
+				      for (int z = 0; z < 27; z++){
+				        if (b.getTile(z, i).isPassable()){
+				          terminal.moveCursor(z,i);
+									terminal.putCharacter(' ');
+				        }
+				        else{
+				          terminal.moveCursor(z,i);
+							terminal.applyBackgroundColor(Terminal.Color.WHITE);
+							terminal.putCharacter(' ');
+							terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+				        }
+				      }
+				    }
+					}
+  //NEW STUFF
 				}
 
 				if (key.getKind() == Key.Kind.ArrowUp) {
