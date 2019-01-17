@@ -58,7 +58,10 @@ public class thing {
 		int y = 13;
 
 //NEW STUFF
-    b.getTile(12,13).setTile(Stairs);
+    terminal.moveCursor(12,13);
+		terminal.applyBackgroundColor(Terminal.Color.GREEN);
+		terminal.putCharacter(' ');
+    b.getTile(12,13).setTile(new Stairs());
 //NEW STUFF STAIRS TEST
 
 		while(running){
@@ -108,7 +111,7 @@ Key key = terminal.readInput();
           }
 ///NEW STUFF
 					if (b.getTile(x+1,y).isStairs()){ //DETECT STAIRS
-						Grid bb = new Grid(a);
+						b = new Grid(a);
 				    for(int i = 0; i < 27; i++){
 				      for (int z = 0; z < 27; z++){
 				        if (b.getTile(z, i).isPassable()){
