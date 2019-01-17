@@ -1,21 +1,18 @@
 public class Tile{
-  private Object thing;
+  private Monster enemy;
   private boolean passable;
-  public Tile(Object thething, boolean pass){
-    thing = thething;
+  public Tile(Monster thing, boolean pass){
+    enemy = thing;
     passable = pass;
   }
   public Tile(boolean pass){
     passable = pass;
   }
   public boolean isMonster(){
-    return thing instanceof Monster;
+    return enemy instanceof Monster;
   }
-  public boolean isPlayer(){
-    return thing instanceof Player;
-  }
-  public void setTile(Object x){
-    thing = x;
+  public Monster getMonster(){
+    return enemy;
   }
   public boolean isPassable(){
     return passable;

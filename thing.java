@@ -47,10 +47,16 @@ public class thing {
         }
         else{
           terminal.moveCursor(z,i);
-			terminal.applyBackgroundColor(Terminal.Color.WHITE);
-			terminal.putCharacter(' ');
-			terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+					terminal.applyBackgroundColor(Terminal.Color.WHITE);
+					terminal.putCharacter(' ');
+					terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
         }
+				if (b.getTile(z,i).isMonster()){
+					terminal.movecursor(z,i);
+					terminal.applyBackgroundColor(Terminal.Color.RED);
+					terminal.putCharacter('x');
+					terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+				}
       }
     }
 
@@ -84,8 +90,14 @@ Key key = terminal.readInput();
 				}
 
         if (key.getKind() == Key.Kind.ArrowLeft) {
-
-          if (b.getTile(x-1,y).isPassable()) { //checks if the thing's passable
+					if (b.getTile(x-1,y).isMonster()){
+						a.attack(b.getTile(x-1,y));
+						if (b.getTile(x-1,y).getMonster().getHp() < 0){
+							a.gainExp(b.getTile(x-1,y).getMonster().getExp());
+							b.setTile(x, y, new Tile(new Empty(), true));
+						}
+					}
+          if (b.getTile(x-1,y).isPassable() && ! b.getTile(x-1,y).isMonster()) { //checks if the thing's passable
 
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');

@@ -25,5 +25,6 @@ public class Monster implements Combatable{
   }
   public void changeHP(int hp){
     hP = hP - hp;
+    }
   }
 }
