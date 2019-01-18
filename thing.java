@@ -108,7 +108,14 @@ Key key = terminal.readInput();
 
 				if (key.getKind() == Key.Kind.ArrowRight) {
 
-          if (b.getTile(x+1,y).isPassable()) {
+					if (b.getTile(x+1,y).isMonster()){
+						a.attack(b.getTile(x+1,y).getMonster());
+						if (b.getTile(x+1,y).getMonster().getHP() < 0){
+							a.gainExp(b.getTile(x+1,y).getMonster().getExp());
+							b.setTile(x+1, y, new Tile(true));
+						}
+					}
+          if (b.getTile(x+1,y).isPassable() && ! b.getTile(x+1,y).isMonster()) { //checks if the thing's passable
 
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
@@ -119,19 +126,37 @@ Key key = terminal.readInput();
 				}
 
 				if (key.getKind() == Key.Kind.ArrowUp) {
-					if (b.getTile(x,y-1).isPassable()) {
+					if (b.getTile(x,y-1).isMonster()){
+						a.attack(b.getTile(x,y-1).getMonster());
+						if (b.getTile(x,y-1).getMonster().getHP() < 0){
+							a.gainExp(b.getTile(x,y-1).getMonster().getExp());
+							b.setTile(x, y-1, new Tile(true));
+						}
+					}
+          if (b.getTile(x,y-1).isPassable() && ! b.getTile(x,y-1).isMonster()) { //checks if the thing's passable
+
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
 					y--;
+
           }
 				}
 
 				if (key.getKind() == Key.Kind.ArrowDown) {
-          if (b.getTile(x,y+1).isPassable()) {
+					if (b.getTile(x,y+1).isMonster()){
+						a.attack(b.getTile(x,y+1).getMonster());
+						if (b.getTile(x,y+1).getMonster().getHP() < 0){
+							a.gainExp(b.getTile(x,y+1).getMonster().getExp());
+							b.setTile(x, y+1, new Tile(true));
+						}
+					}
+          if (b.getTile(x,y+1).isPassable() && ! b.getTile(x,y+1).isMonster()) { //checks if the thing's passable
+
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
 					y++;
-				}
+
+          }
         }
 				//space moves it diagonally
 		/*		if (key.getCharacter() == ' ') {
