@@ -24,7 +24,6 @@ public class Monster implements Combatable{
     other.changeHP(-1 * this.getAtk());
   }
   public void changeHP(int hp){
-    hP = hP - hp;
-    }
+    hP = hP + hp;
   }
 }

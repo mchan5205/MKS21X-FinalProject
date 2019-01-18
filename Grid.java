@@ -44,7 +44,12 @@ public class Grid{
         }
         for (int x = h - height + 1; x < h + height; x++){
           for (int y = w - width + 1; y < w + width; y++){
-            tiles[y][x] = new Tile(, true);
+            if (t.nextInt() % 10 < 9){
+              tiles[y][x] = new Tile(true);
+            }
+            else{
+              tiles[y][x] = new Tile(new Monster("monster", 10, 5), true);
+            }
           }
         }
         tiles[w + width][h] = new Tile(true);
@@ -58,8 +63,8 @@ public class Grid{
       tiles[i][26] = new Tile(false);
     }
     for(int i = 0; i < 27; i++){
-      tiles[0][i] = new Tile(, false);
-      tiles[44][i] = new Tile(, false);
+      tiles[0][i] = new Tile(false);
+      tiles[44][i] = new Tile(false);
     }
   }
   public Tile getTile(int x, int y){

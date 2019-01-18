@@ -52,7 +52,7 @@ public class thing {
 					terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
         }
 				if (b.getTile(z,i).isMonster()){
-					terminal.movecursor(z,i);
+					terminal.moveCursor(z,i);
 					terminal.applyBackgroundColor(Terminal.Color.RED);
 					terminal.putCharacter('x');
 					terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
@@ -91,10 +91,10 @@ Key key = terminal.readInput();
 
         if (key.getKind() == Key.Kind.ArrowLeft) {
 					if (b.getTile(x-1,y).isMonster()){
-						a.attack(b.getTile(x-1,y));
-						if (b.getTile(x-1,y).getMonster().getHp() < 0){
+						a.attack(b.getTile(x-1,y).getMonster());
+						if (b.getTile(x-1,y).getMonster().getHP() < 0){
 							a.gainExp(b.getTile(x-1,y).getMonster().getExp());
-							b.setTile(x, y, new Tile(new Empty(), true));
+							b.setTile(x-1, y, new Tile(true));
 						}
 					}
           if (b.getTile(x-1,y).isPassable() && ! b.getTile(x-1,y).isMonster()) { //checks if the thing's passable
