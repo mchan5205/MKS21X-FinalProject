@@ -39,12 +39,19 @@ public class thing {
 
         Player a = new Player("bob",10,5);           //Creates player
     Grid b = new Grid(a);
+		//b.getTile(12,13).setTile(new Stairs());          //TESTING STAIRS
     for(int i = 0; i < 27; i++){
       for (int z = 0; z < 27; z++){
         if (b.getTile(z, i).isPassable()){
           terminal.moveCursor(z,i);
 					terminal.putCharacter(' ');
         }
+	//			if (b.getTile(z, i).isStairs()){
+	//				terminal.applyBackgroundColor(Terminal.Color.GREEN);
+	//				terminal.moveCursor(z,i);
+	//				terminal.putCharacter(' ');
+	//				terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+	//			}
         else{
           terminal.moveCursor(z,i);
 			terminal.applyBackgroundColor(Terminal.Color.WHITE);
@@ -102,6 +109,26 @@ Key key = terminal.readInput();
 
 				if (key.getKind() == Key.Kind.ArrowRight) {
 
+					///NEW STUFF
+										if (b.getTile(x+1,y).isStairs()){ //DETECT STAIRS
+											b = new Grid(a);
+									    for(int i = 0; i < 27; i++){
+									      for (int z = 0; z < 27; z++){
+									        if (b.getTile(z, i).isPassable()){
+									          terminal.moveCursor(z,i);
+														terminal.putCharacter(' ');
+									        }
+									        else{
+									          terminal.moveCursor(z,i);
+												terminal.applyBackgroundColor(Terminal.Color.WHITE);
+												terminal.putCharacter(' ');
+												terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+									        }
+									      }
+									    }
+										}
+					  //NEW STUFF
+
           if (b.getTile(x+1,y).isPassable()) {
 
 					terminal.moveCursor(x,y);
@@ -109,25 +136,7 @@ Key key = terminal.readInput();
 					x++;
 
           }
-///NEW STUFF
-					if (b.getTile(x+1,y).isStairs()){ //DETECT STAIRS
-						b = new Grid(a);
-				    for(int i = 0; i < 27; i++){
-				      for (int z = 0; z < 27; z++){
-				        if (b.getTile(z, i).isPassable()){
-				          terminal.moveCursor(z,i);
-									terminal.putCharacter(' ');
-				        }
-				        else{
-				          terminal.moveCursor(z,i);
-							terminal.applyBackgroundColor(Terminal.Color.WHITE);
-							terminal.putCharacter(' ');
-							terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-				        }
-				      }
-				    }
-					}
-  //NEW STUFF
+
 				}
 
 				if (key.getKind() == Key.Kind.ArrowUp) {
@@ -143,17 +152,8 @@ Key key = terminal.readInput();
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
 					y++;
-				}
+			  	}
         }
-				//space moves it diagonally
-		/*		if (key.getCharacter() == ' ') {
-					terminal.moveCursor(x,y);
-					terminal.putCharacter(' ');
-					y++;
-					x++;
-				}         */
-				//putString(1,4,terminal,"["+key.getCharacter() +"]");
-				//putString(1,1,terminal,key+"        ");//to clear leftover letters pad withspaces
 			}
 
 			putString(1,30,terminal,"Health "+a.getHP() + " Attack "+ a.getAtk() + " Experience "+ a.getExp()); //Player UI: Health, Attack, Exp
