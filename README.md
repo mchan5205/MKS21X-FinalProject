@@ -1,3 +1,7 @@
+1/18/19
+- add random monster generation to rooms
+- added combat between mosnters and players
+
 1/16/19
 - grid size increased
 
