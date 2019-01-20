@@ -48,7 +48,12 @@ public class Grid{
               tiles[y][x] = new Tile(true);
             }
             else{
-              tiles[y][x] = new Tile(new Monster("monster", 10, 5), true);
+              if (t.nextInt() % 10 < 9){
+                tiles[y][x] = new Tile(new Monster("monster", 10, 5), true);
+              }
+              else{
+                tiles[y][x] = new Tile(true, true);
+              }
             }
           }
         }
