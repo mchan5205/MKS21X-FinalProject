@@ -38,6 +38,19 @@ public class thing {
     }
   }
   
+  public int randomStairsY(){
+    Random rng = new Random();
+    if (rng.nextInt()%3 == 0){
+      return 4;
+    }
+    if (rng.nextInt()%3 == 1){
+      return 13;
+    }
+    else{
+      return 22;
+    }
+  }
+  
 	public static void main(String[] args) {
 
 		Terminal terminal = TerminalFacade.createTextTerminal();
