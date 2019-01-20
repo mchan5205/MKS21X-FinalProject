@@ -1,5 +1,3 @@
-
-
 import java.util.Random;
 import com.googlecode.lanterna.terminal.Terminal.SGR;
 import com.googlecode.lanterna.TerminalFacade;
@@ -101,7 +99,7 @@ public class thing {
 		while(running){
 
 			terminal.moveCursor(x,y);  //STARTING POSITION OF CURSOR? You can change them up there^^^
-			terminal.applyBackgroundColor(Terminal.Color.WHITE);
+			terminal.applyBackgroundColor(Terminal.Color.YELLOW);
 			terminal.applyForegroundColor(Terminal.Color.BLACK);
 			//applySGR(a,b) for multiple modifiers (bold,blink) etc.
 			//terminal.applySGR(Terminal.SGR.ENTER_UNDERLINE);
@@ -159,7 +157,7 @@ Key key = terminal.readInput();
           stairsY = randomStairsY();
           terminal.moveCursor(stairsX, stairsY);
           terminal.applyBackgroundColor(Terminal.Color.GREEN);
-		      terminal.putCharacter('x');
+		      terminal.putCharacter(' ');
 		      terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
             
         }///STAIRS STUFF^^^
@@ -211,7 +209,7 @@ Key key = terminal.readInput();
           stairsY = randomStairsY();
           terminal.moveCursor(stairsX, stairsY);
           terminal.applyBackgroundColor(Terminal.Color.GREEN);
-		      terminal.putCharacter('x');
+		      terminal.putCharacter(' ');
 		      terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
             
         }///STAIRS STUFF^^^
@@ -261,7 +259,7 @@ Key key = terminal.readInput();
           stairsY = randomStairsY();
           terminal.moveCursor(stairsX, stairsY);
           terminal.applyBackgroundColor(Terminal.Color.GREEN);
-		      terminal.putCharacter('x');
+		      terminal.putCharacter(' ');
 		      terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
             
         }///STAIRS STUFF^^^
@@ -311,7 +309,7 @@ Key key = terminal.readInput();
           stairsY = randomStairsY();
           terminal.moveCursor(stairsX, stairsY);
           terminal.applyBackgroundColor(Terminal.Color.GREEN);
-		      terminal.putCharacter('x');
+		      terminal.putCharacter(' ');
 		      terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
             
         }///STAIRS STUFF^^^
