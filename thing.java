@@ -179,12 +179,13 @@ Key key = terminal.readInput();
 		      terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
             
         }///STAIRS STUFF^^^
-          
+        else{
          if (b.getTile(x+1,y).isPassable() && ! b.getTile(x+1,y).isMonster()) { //checks if the thing's passable
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
 					x++;
           }
+        }
 
 				}
 
