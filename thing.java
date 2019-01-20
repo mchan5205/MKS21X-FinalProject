@@ -131,6 +131,41 @@ Key key = terminal.readInput();
 							b.setTile(x-1, y, new Tile(true));
 						}
 					}
+          
+          ///STAIRS STUFFvvv
+          if (x-1 == stairsX && y == stairsY){
+            b = new Grid(a);
+            for(int i = 0; i < 27; i++){
+            for (int z = 0; z < 45; z++){
+              if (b.getTile(z, i).isPassable()){
+                terminal.moveCursor(z,i);
+					      terminal.putCharacter(' ');
+              }
+              else{
+                terminal.moveCursor(z,i);
+					      terminal.applyBackgroundColor(Terminal.Color.WHITE);
+					      terminal.putCharacter(' ');
+				      	terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+              }
+			   	    if (b.getTile(z,i).isMonster()){
+			  		    terminal.moveCursor(z,i);
+			  		    terminal.applyBackgroundColor(Terminal.Color.RED);
+			  		    terminal.putCharacter('x');
+			  		    terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+			      	}
+            }
+          }
+          stairsX = randomStairsX();
+          stairsY = randomStairsY();
+          terminal.moveCursor(stairsX, stairsY);
+          terminal.applyBackgroundColor(Terminal.Color.GREEN);
+		      terminal.putCharacter('x');
+		      terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+            
+        }///STAIRS STUFF^^^
+        
+        else{
+          
           if (b.getTile(x-1,y).isPassable() && ! b.getTile(x-1,y).isMonster()) { //checks if the thing's passable
 
 					terminal.moveCursor(x,y);
@@ -138,6 +173,7 @@ Key key = terminal.readInput();
 					x--;
 
           }
+        }
        }
 
 			  if (key.getKind() == Key.Kind.ArrowRight) {
@@ -197,12 +233,46 @@ Key key = terminal.readInput();
 							b.setTile(x, y-1, new Tile(true));
 						}
 					}
+          
+          ///STAIRS STUFFvvv
+          if (x == stairsX && y-1 == stairsY){
+            b = new Grid(a);
+            for(int i = 0; i < 27; i++){
+            for (int z = 0; z < 45; z++){
+              if (b.getTile(z, i).isPassable()){
+                terminal.moveCursor(z,i);
+					      terminal.putCharacter(' ');
+              }
+              else{
+                terminal.moveCursor(z,i);
+					      terminal.applyBackgroundColor(Terminal.Color.WHITE);
+					      terminal.putCharacter(' ');
+				      	terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+              }
+			   	    if (b.getTile(z,i).isMonster()){
+			  		    terminal.moveCursor(z,i);
+			  		    terminal.applyBackgroundColor(Terminal.Color.RED);
+			  		    terminal.putCharacter('x');
+			  		    terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+			      	}
+            }
+          }
+          stairsX = randomStairsX();
+          stairsY = randomStairsY();
+          terminal.moveCursor(stairsX, stairsY);
+          terminal.applyBackgroundColor(Terminal.Color.GREEN);
+		      terminal.putCharacter('x');
+		      terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+            
+        }///STAIRS STUFF^^^
+          else{
           if (b.getTile(x,y-1).isPassable() && ! b.getTile(x,y-1).isMonster()) { //checks if the thing's passable
 
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
 					y--;
 
+          }
           }
 				}
 
@@ -214,12 +284,45 @@ Key key = terminal.readInput();
 							b.setTile(x, y+1, new Tile(true));
 						}
 					}
+          ///STAIRS STUFFvvv
+          if (x == stairsX && y+1 == stairsY){
+            b = new Grid(a);
+            for(int i = 0; i < 27; i++){
+            for (int z = 0; z < 45; z++){
+              if (b.getTile(z, i).isPassable()){
+                terminal.moveCursor(z,i);
+					      terminal.putCharacter(' ');
+              }
+              else{
+                terminal.moveCursor(z,i);
+					      terminal.applyBackgroundColor(Terminal.Color.WHITE);
+					      terminal.putCharacter(' ');
+				      	terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+              }
+			   	    if (b.getTile(z,i).isMonster()){
+			  		    terminal.moveCursor(z,i);
+			  		    terminal.applyBackgroundColor(Terminal.Color.RED);
+			  		    terminal.putCharacter('x');
+			  		    terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+			      	}
+            }
+          }
+          stairsX = randomStairsX();
+          stairsY = randomStairsY();
+          terminal.moveCursor(stairsX, stairsY);
+          terminal.applyBackgroundColor(Terminal.Color.GREEN);
+		      terminal.putCharacter('x');
+		      terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+            
+        }///STAIRS STUFF^^^
+          else{
           if (b.getTile(x,y+1).isPassable() && ! b.getTile(x,y+1).isMonster()) { //checks if the thing's passable
 
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
 					y++;
 
+          }
           }
         }
 			}
