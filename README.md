@@ -1,12 +1,14 @@
 1/18/19
 - add random monster generation to rooms
 - added combat between mosnters and players
+- remaking stairs
 
 1/16/19
 - grid size increased
 
 1/15/19
 - started increasing grid size
+- started stairs
 
 1/14/19
 - changed wall color
