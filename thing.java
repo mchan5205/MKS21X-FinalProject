@@ -1,6 +1,6 @@
 
 
-//API : http://mabe02.github.io/lanterna/apidocs/2.1/
+import java.util.Random;
 import com.googlecode.lanterna.terminal.Terminal.SGR;
 import com.googlecode.lanterna.TerminalFacade;
 import com.googlecode.lanterna.input.Key;
@@ -24,6 +24,19 @@ public class thing {
 			t.putCharacter(s.charAt(i));
 		}
 	}
+  
+  public int randomStairsX(){
+    Random rng = new Random();
+    if (rng.nextInt()%3 == 0){
+      return 7;
+    }
+    if (rng.nextInt()%3 == 1){
+      return 22;
+    }
+    else{
+      return 37;
+    }
+  }
   
 	public static void main(String[] args) {
 
