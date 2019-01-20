@@ -1,3 +1,6 @@
+1/20/19
+- added stairs to new rooms
+
 1/18/19
 - add random monster generation to rooms
 - added combat between mosnters and players
