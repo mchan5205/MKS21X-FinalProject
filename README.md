@@ -1,5 +1,6 @@
 1/20/19
 - added stairs to new rooms
+- changed player and stairs glyph
 
 1/18/19
 - add random monster generation to rooms
