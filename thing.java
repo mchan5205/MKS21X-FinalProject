@@ -25,7 +25,7 @@ public class thing {
 		}
 	}
   
-  public int randomStairsX(){
+  public static int randomStairsX(){
     Random rng = new Random();
     if (rng.nextInt()%3 == 0){
       return 7;
@@ -38,7 +38,7 @@ public class thing {
     }
   }
   
-  public int randomStairsY(){
+  public static int randomStairsY(){
     Random rng = new Random();
     if (rng.nextInt()%3 == 0){
       return 4;
@@ -148,7 +148,7 @@ Key key = terminal.readInput();
 					  	b.setTile(x+1, y, new Tile(true));
             }
 			  	}
-        ///STAIRS STUFF
+        ///STAIRS STUFFvvv
           if (x+1 == stairsX && y == stairsY){
             b = new Grid(a);
             for(int i = 0; i < 27; i++){
@@ -171,12 +171,14 @@ Key key = terminal.readInput();
 			      	}
             }
           }
+          stairsX = randomStairsX();
+          stairsY = randomStairsY();
           terminal.moveCursor(stairsX, stairsY);
           terminal.applyBackgroundColor(Terminal.Color.GREEN);
 		      terminal.putCharacter('x');
 		      terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
             
-        }///STAIRS STUFF
+        }///STAIRS STUFF^^^
           
          if (b.getTile(x+1,y).isPassable() && ! b.getTile(x+1,y).isMonster()) { //checks if the thing's passable
 					terminal.moveCursor(x,y);
