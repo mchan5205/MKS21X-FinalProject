@@ -37,6 +37,10 @@ public class thing {
 		long tStart = System.currentTimeMillis();
 		long lastSecond = 0;
 
+    
+    int stairsX = 23;
+    int stairsY = 13;
+    
     Player a = new Player("bob",10,5);           //Creates player
     Grid b = new Grid(a);
     for(int i = 0; i < 27; i++){
@@ -59,10 +63,13 @@ public class thing {
 				}
       }
     }
-
+    terminal.moveCursor(stairsX, stairsY);
+    terminal.applyBackgroundColor(Terminal.Color.GREEN);
+		terminal.putCharacter('x');
+		terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+   
     int x = 22;
 		int y = 13;
-
 
 		while(running){
 
@@ -115,12 +122,37 @@ Key key = terminal.readInput();
 							b.setTile(x+1, y, new Tile(true));
 						}
 					}
-          if (b.getTile(x+1,y).isPassable() && ! b.getTile(x+1,y).isMonster()) { //checks if the thing's passable
-
+          ///STAIRS STUFF
+          if (x+1 == stairsX && y == stairsY){
+            
+            b = new Grid(a);
+    for(int i = 0; i < 27; i++){
+      for (int z = 0; z < 45; z++){
+        if (b.getTile(z, i).isPassable()){
+          terminal.moveCursor(z,i);
+					terminal.putCharacter(' ');
+        }
+        else{
+          terminal.moveCursor(z,i);
+					terminal.applyBackgroundColor(Terminal.Color.WHITE);
+					terminal.putCharacter(' ');
+					terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+        }
+				if (b.getTile(z,i).isMonster()){
+					terminal.moveCursor(z,i);
+					terminal.applyBackgroundColor(Terminal.Color.RED);
+					terminal.putCharacter('x');
+					terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+				}
+      }
+    }
+            
+          }///STAIRS STUFF
+          
+         if (b.getTile(x+1,y).isPassable() && ! b.getTile(x+1,y).isMonster()) { //checks if the thing's passable
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
 					x++;
-
           }
 
 				}
