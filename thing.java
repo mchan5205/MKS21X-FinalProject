@@ -86,6 +86,14 @@ public class thing {
 					terminal.putCharacter('x');
 					terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
 				}
+        
+        if (b.getTile(z,i).isPotion()){
+          terminal.moveCursor(z,i);
+			    terminal.applyBackgroundColor(Terminal.Color.BLUE);
+          terminal.putCharacter('H');
+			    terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+        }
+
       }
     }
     terminal.moveCursor(stairsX, stairsY);
