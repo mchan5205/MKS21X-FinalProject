@@ -24,6 +24,7 @@ public class thing {
 			t.putCharacter(s.charAt(i));
 		}
 	}
+  
 	public static void main(String[] args) {
 
 		Terminal terminal = TerminalFacade.createTextTerminal();
@@ -38,7 +39,7 @@ public class thing {
 		long lastSecond = 0;
 
     
-    int stairsX = 23;
+    int stairsX = 37;
     int stairsY = 13;
     
     Player a = new Player("bob",10,5);           //Creates player
@@ -65,7 +66,7 @@ public class thing {
     }
     terminal.moveCursor(stairsX, stairsY);
     terminal.applyBackgroundColor(Terminal.Color.GREEN);
-		terminal.putCharacter('x');
+		terminal.putCharacter(' ');
 		terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
    
     int x = 22;
@@ -113,41 +114,43 @@ Key key = terminal.readInput();
           }
        }
 
-				if (key.getKind() == Key.Kind.ArrowRight) {
-
-					if (b.getTile(x+1,y).isMonster()){
-						a.attack(b.getTile(x+1,y).getMonster());
-						if (b.getTile(x+1,y).getMonster().getHP() < 0){
-							a.gainExp(b.getTile(x+1,y).getMonster().getExp());
-							b.setTile(x+1, y, new Tile(true));
-						}
-					}
-          ///STAIRS STUFF
+			  if (key.getKind() == Key.Kind.ArrowRight) {
+				  if (b.getTile(x+1,y).isMonster()){
+				  	a.attack(b.getTile(x+1,y).getMonster());
+				  	if (b.getTile(x+1,y).getMonster().getHP() < 0){
+						  a.gainExp(b.getTile(x+1,y).getMonster().getExp());
+					  	b.setTile(x+1, y, new Tile(true));
+            }
+			  	}
+        ///STAIRS STUFF
           if (x+1 == stairsX && y == stairsY){
-            
             b = new Grid(a);
-    for(int i = 0; i < 27; i++){
-      for (int z = 0; z < 45; z++){
-        if (b.getTile(z, i).isPassable()){
-          terminal.moveCursor(z,i);
-					terminal.putCharacter(' ');
-        }
-        else{
-          terminal.moveCursor(z,i);
-					terminal.applyBackgroundColor(Terminal.Color.WHITE);
-					terminal.putCharacter(' ');
-					terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-        }
-				if (b.getTile(z,i).isMonster()){
-					terminal.moveCursor(z,i);
-					terminal.applyBackgroundColor(Terminal.Color.RED);
-					terminal.putCharacter('x');
-					terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-				}
-      }
-    }
+            for(int i = 0; i < 27; i++){
+            for (int z = 0; z < 45; z++){
+              if (b.getTile(z, i).isPassable()){
+                terminal.moveCursor(z,i);
+					      terminal.putCharacter(' ');
+              }
+              else{
+                terminal.moveCursor(z,i);
+					      terminal.applyBackgroundColor(Terminal.Color.WHITE);
+					      terminal.putCharacter(' ');
+				      	terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+              }
+			   	    if (b.getTile(z,i).isMonster()){
+			  		    terminal.moveCursor(z,i);
+			  		    terminal.applyBackgroundColor(Terminal.Color.RED);
+			  		    terminal.putCharacter('x');
+			  		    terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+			      	}
+            }
+          }
+          terminal.moveCursor(stairsX, stairsY);
+          terminal.applyBackgroundColor(Terminal.Color.GREEN);
+		      terminal.putCharacter('x');
+		      terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
             
-          }///STAIRS STUFF
+        }///STAIRS STUFF
           
          if (b.getTile(x+1,y).isPassable() && ! b.getTile(x+1,y).isMonster()) { //checks if the thing's passable
 					terminal.moveCursor(x,y);
@@ -190,15 +193,6 @@ Key key = terminal.readInput();
 
           }
         }
-				//space moves it diagonally
-		/*		if (key.getCharacter() == ' ') {
-					terminal.moveCursor(x,y);
-					terminal.putCharacter(' ');
-					y++;
-					x++;
-				}         */
-				//putString(1,4,terminal,"["+key.getCharacter() +"]");
-				//putString(1,1,terminal,key+"        ");//to clear leftover letters pad withspaces
 			}
 
 			putString(1,30,terminal,"Health "+a.getHP() + " Attack "+ a.getAtk() + " Experience "+ a.getExp()); //Player UI: Health, Attack, Exp
