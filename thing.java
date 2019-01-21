@@ -128,6 +128,10 @@ Key key = terminal.readInput();
 				}
 
         if (key.getKind() == Key.Kind.ArrowLeft) {
+					if (a.getHP() <= 0){
+						terminal.exitPrivateMode();
+						running = false;
+					}
 					if (b.getTile(x-1,y).isMonster()){
 						a.attack(b.getTile(x-1,y).getMonster());
 						if (b.getTile(x-1,y).getMonster().getHP() < 0){
@@ -136,6 +140,10 @@ Key key = terminal.readInput();
 						}
 						else{
 							b.getTile(x-1,y).getMonster().attack(a);
+							if (a.getHP() <= 0){
+								terminal.applyBackgroundColor(Terminal.Color.BLACK);
+								putString(15,13,terminal, "You died(esc to leave)");
+							}
 						}
 					}
 
@@ -190,6 +198,10 @@ Key key = terminal.readInput();
        }
 
 			  if (key.getKind() == Key.Kind.ArrowRight) {
+					if (a.getHP() <= 0){
+						terminal.exitPrivateMode();
+						running = false;
+					}
 				  if (b.getTile(x+1,y).isMonster()){
 				  	a.attack(b.getTile(x+1,y).getMonster());
 				  	if (b.getTile(x+1,y).getMonster().getHP() < 0){
@@ -198,6 +210,10 @@ Key key = terminal.readInput();
             }
 						else{
 							b.getTile(x+1,y).getMonster().attack(a);
+							if (a.getHP() <= 0){
+								terminal.applyBackgroundColor(Terminal.Color.BLACK);
+								putString(15,13,terminal, "You died(esc to leave)");
+							}
 						}
 			  	}
           if (b.getTile(x+1,y).isPotion()){
@@ -252,6 +268,10 @@ Key key = terminal.readInput();
 				}
 
 				if (key.getKind() == Key.Kind.ArrowUp) {
+					if (a.getHP() <= 0){
+						terminal.exitPrivateMode();
+						running = false;
+					}
 					if (b.getTile(x,y-1).isMonster()){
 						a.attack(b.getTile(x,y-1).getMonster());
 						if (b.getTile(x,y-1).getMonster().getHP() < 0){
@@ -260,6 +280,10 @@ Key key = terminal.readInput();
 						}
 						else{
 							b.getTile(x,y-1).getMonster().attack(a);
+							if (a.getHP() <= 0){
+								terminal.applyBackgroundColor(Terminal.Color.BLACK);
+								putString(15,13,terminal, "You died(esc to leave)");
+							}
 						}
 					}
 
@@ -312,6 +336,10 @@ Key key = terminal.readInput();
 				}
 
 				if (key.getKind() == Key.Kind.ArrowDown) {
+					if (a.getHP() <= 0){
+						terminal.exitPrivateMode();
+						running = false;
+					}
 					if (b.getTile(x,y+1).isMonster()){
 						a.attack(b.getTile(x,y+1).getMonster());
 						if (b.getTile(x,y+1).getMonster().getHP() < 0){
@@ -321,13 +349,6 @@ Key key = terminal.readInput();
 						else{
 							b.getTile(x,y+1).getMonster().attack(a);
 							if (a.getHP() <= 0){
-								for (int i = 0; i < 45; i++){
-									for (int t = 0; i < 27; i++){
-										terminal.applyBackgroundColor(Terminal.Color.WHITE);
-										terminal.moveCursor(i,t);
-										terminal.putCharacter(' ');
-									}
-								}
 								terminal.applyBackgroundColor(Terminal.Color.BLACK);
 								putString(15,13,terminal, "You died(esc to leave)");
 							}
