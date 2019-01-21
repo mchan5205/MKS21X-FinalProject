@@ -212,7 +212,7 @@ Key key = terminal.readInput();
 							b.getTile(x+1,y).getMonster().attack(a);
 							if (a.getHP() <= 0){
 								terminal.applyBackgroundColor(Terminal.Color.BLACK);
-								putString(15,13,terminal, "You died(esc to leave)");
+								putString(20,13,terminal, "You died");
 							}
 						}
 			  	}
@@ -282,7 +282,7 @@ Key key = terminal.readInput();
 							b.getTile(x,y-1).getMonster().attack(a);
 							if (a.getHP() <= 0){
 								terminal.applyBackgroundColor(Terminal.Color.BLACK);
-								putString(15,13,terminal, "You died(esc to leave)");
+								putString(20,13,terminal, "You died");
 							}
 						}
 					}
@@ -350,7 +350,7 @@ Key key = terminal.readInput();
 							b.getTile(x,y+1).getMonster().attack(a);
 							if (a.getHP() <= 0){
 								terminal.applyBackgroundColor(Terminal.Color.BLACK);
-								putString(15,13,terminal, "You died(esc to leave)");
+								putString(20,13,terminal, "You died");
 							}
 						}
 					}
