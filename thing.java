@@ -320,6 +320,19 @@ Key key = terminal.readInput();
 						}
 						else{
 							b.getTile(x,y+1).getMonster().attack(a);
+							if (a.getHP() <= 0){
+								for (int i = 0; i < 100; i++){
+									for (int t = 0; i < 100; i++){
+										terminal.applyBackgroundColor(Terminal.Color.BLACK);
+										terminal.moveCursor(z,t);
+										terminal.putCharacter(' ');
+									}
+								}
+								terminal.applyBackgroundColor(Terminal.Color.White);
+								putString(1,1,terminal, "You died");
+								running = false;
+								}
+							}
 						}
 					}
           ///STAIRS STUFFvvv
