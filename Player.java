@@ -43,8 +43,8 @@ public class Player implements Combatable{
   }
   public void gainExp(int xp){
      exp += xp;
-     if (exp > 50){
-       exp -= 50;
+     if (exp > 10){
+       exp -= 10;
        maxHP += 1;
        hP += 1;
        level += 1;
