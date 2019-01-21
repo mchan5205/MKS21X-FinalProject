@@ -3,10 +3,10 @@ public class Tile{
   private boolean passable;
   private boolean hasMonster;
   private boolean hasPotion;
-  public Tile(boolean pass, boolean pot){
+  public Tile(boolean pass, boolean pot){   //POTION GENERTATOR
     passable = pass;
     hasMonster = false;
-    hasPotion = pot;
+    hasPotion = true;
   }
   public Tile(Monster thing, boolean pass){
     enemy = thing;

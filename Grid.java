@@ -52,7 +52,7 @@ public class Grid{
                 tiles[y][x] = new Tile(new Monster("monster", 10, 5), true);
               }
               else{
-                tiles[y][x] = new Tile(true, true);  
+                tiles[y][x] = new Tile(true, true);                  
               }
             }
           }
