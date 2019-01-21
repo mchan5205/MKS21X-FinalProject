@@ -22,6 +22,7 @@ How to use
 - combat
   - walk into an enemy
   - your health will go down on the bottom of the screen
+    - the amount of attack and health of enemies are random
   - everytime you get past 10 exp, you level up
     - leveling up increases player's maxHp and attack
 - stairs
