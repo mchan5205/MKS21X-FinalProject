@@ -22,7 +22,7 @@ public class thing {
 			t.putCharacter(s.charAt(i));
 		}
 	}
-  
+
   public static int randomStairsX(){
     Random rng = new Random();
     if (rng.nextInt()%3 == 0){
@@ -35,7 +35,7 @@ public class thing {
       return 37;
     }
   }
-  
+
   public static int randomStairsY(){
     Random rng = new Random();
     if (rng.nextInt()%3 == 0){
@@ -48,7 +48,7 @@ public class thing {
       return 22;
     }
   }
-  
+
 	public static void main(String[] args) {
 
 		Terminal terminal = TerminalFacade.createTextTerminal();
@@ -62,10 +62,10 @@ public class thing {
 		long tStart = System.currentTimeMillis();
 		long lastSecond = 0;
 
-    
+
     int stairsX = 37;
     int stairsY = 13;
-    
+
     Player a = new Player("bob",10,5);           //Creates player
     Grid b = new Grid(a);
     for(int i = 0; i < 27; i++){
@@ -98,7 +98,7 @@ public class thing {
     terminal.applyBackgroundColor(Terminal.Color.GREEN);
 		terminal.putCharacter(' ');
 		terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-   
+
     int x = 22;
 		int y = 13;
 
@@ -126,7 +126,7 @@ Key key = terminal.readInput();
 					terminal.exitPrivateMode();
 					running = false;
 				}
-        
+
         if (key.getKind() == Key.Kind.Backspace){
           a.losePot();
           a.maxHeal();
@@ -138,6 +138,9 @@ Key key = terminal.readInput();
 						if (b.getTile(x-1,y).getMonster().getHP() < 0){
 							a.gainExp(b.getTile(x-1,y).getMonster().getExp());
 							b.setTile(x-1, y, new Tile(true));
+						}
+						else{
+							b.getTile(x-1,y).getMonster().attack(a);
 						}
 					}
           if (b.getTile(x-1,y).isPotion()){
@@ -178,11 +181,11 @@ Key key = terminal.readInput();
           terminal.applyBackgroundColor(Terminal.Color.GREEN);
 		      terminal.putCharacter(' ');
 		      terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-            
+
         }///STAIRS STUFF^^^
-        
+
         else{
-          
+
           if (b.getTile(x-1,y).isPassable() && ! b.getTile(x-1,y).isMonster()) { //checks if the thing's passable
 
 					terminal.moveCursor(x,y);
@@ -200,6 +203,9 @@ Key key = terminal.readInput();
 						  a.gainExp(b.getTile(x+1,y).getMonster().getExp());
 					  	b.setTile(x+1, y, new Tile(true));
             }
+						else{
+							b.getTile(x+1,y).getMonster().attack(a);
+						}
 			  	}
           if (b.getTile(x+1,y).isPotion()){
             a.gainPot();
@@ -239,7 +245,7 @@ Key key = terminal.readInput();
           terminal.applyBackgroundColor(Terminal.Color.GREEN);
 		      terminal.putCharacter(' ');
 		      terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-            
+
         }///STAIRS STUFF^^^
         else{
          if (b.getTile(x+1,y).isPassable() && ! b.getTile(x+1,y).isMonster()) { //checks if the thing's passable
@@ -257,6 +263,9 @@ Key key = terminal.readInput();
 						if (b.getTile(x,y-1).getMonster().getHP() < 0){
 							a.gainExp(b.getTile(x,y-1).getMonster().getExp());
 							b.setTile(x, y-1, new Tile(true));
+						}
+						else{
+							b.getTile(x,y-1).getMonster().attack(a);
 						}
 					}
           if (b.getTile(x,y-1).isPotion()){
@@ -297,7 +306,7 @@ Key key = terminal.readInput();
           terminal.applyBackgroundColor(Terminal.Color.GREEN);
 		      terminal.putCharacter(' ');
 		      terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-            
+
         }///STAIRS STUFF^^^
           else{
           if (b.getTile(x,y-1).isPassable() && ! b.getTile(x,y-1).isMonster()) { //checks if the thing's passable
@@ -316,6 +325,20 @@ Key key = terminal.readInput();
 						if (b.getTile(x,y+1).getMonster().getHP() < 0){
 							a.gainExp(b.getTile(x,y+1).getMonster().getExp());
 							b.setTile(x, y+1, new Tile(true));
+						}
+						else{
+							b.getTile(x,y+1).getMonster().attack(a);
+							if (a.getHP() <= 0){
+								for (int i = 0; i < 45; i++){
+									for (int t = 0; i < 27; i++){
+										terminal.applyBackgroundColor(Terminal.Color.WHITE);
+										terminal.moveCursor(i,t);
+										terminal.putCharacter(' ');
+									}
+								}
+								terminal.applyBackgroundColor(Terminal.Color.BLACK);
+								putString(15,13,terminal, "You died(esc to leave)");
+							}
 						}
 					}
           if (b.getTile(x,y+1).isPotion()){
@@ -356,7 +379,7 @@ Key key = terminal.readInput();
           terminal.applyBackgroundColor(Terminal.Color.GREEN);
 		      terminal.putCharacter(' ');
 		      terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-            
+
         }///STAIRS STUFF^^^
           else{
           if (b.getTile(x,y+1).isPassable() && ! b.getTile(x,y+1).isMonster()) { //checks if the thing's passable
@@ -369,7 +392,7 @@ Key key = terminal.readInput();
           }
         }
 			}
-			putString(1,30,terminal,"Health "+a.getHP() + " Attack "+ a.getAtk() + " Experience "+ a.getExp() + " Potions " + a.getPots()); 
+			putString(1,30,terminal,"Health "+a.getHP() + " Attack "+ a.getAtk() + " Experience "+ a.getExp() + " Potions " + a.getPots());
       //Player UI: Health, Attack, Exp, number of potions
 		}
 	}
