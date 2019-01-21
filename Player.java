@@ -1,5 +1,6 @@
 public class Player implements Combatable{
   private int hP;
+  private int maxHP;
   private int atk;
   private int exp;
   private int potNum;
@@ -7,6 +8,7 @@ public class Player implements Combatable{
 
   public Player(String nam, int health, int attack) {
     hP = health;
+    maxHP = health;
     atk = attack;
     name = nam;
     exp = 0;
@@ -42,6 +44,9 @@ public class Player implements Combatable{
   }
   public void changeHP(int hit){
     hP = hP - hit;
+  }
+  public void maxHeal(){
+    hP = maxHP;
   }
 
 }

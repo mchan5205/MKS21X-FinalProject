@@ -129,7 +129,7 @@ Key key = terminal.readInput();
         
         if (key.getKind() == Key.Kind.Backspace){
           a.losePot();
-          a.changeHP(-5);
+          a.maxHeal();
         }
 
         if (key.getKind() == Key.Kind.ArrowLeft) {
