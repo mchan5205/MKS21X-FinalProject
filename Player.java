@@ -31,6 +31,9 @@ public class Player implements Combatable{
   public void gainPot(){
     potNum += potNum;
   }
+  public void losePot(){
+    potNum -= 1;
+  }
   public void gainExp(int xp){
      exp += xp;
   }

@@ -126,6 +126,11 @@ Key key = terminal.readInput();
 					terminal.exitPrivateMode();
 					running = false;
 				}
+        
+        if (key.getKind() == Key.Kind.Backspace){
+          a.losePot();
+          a.changeHP(-5);
+        }
 
         if (key.getKind() == Key.Kind.ArrowLeft) {
 					if (b.getTile(x-1,y).isMonster()){
