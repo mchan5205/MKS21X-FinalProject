@@ -18,7 +18,7 @@ How to use
   - walk into a potion to pick it up
   - your number of potions will show up on the bottom of the screen
   - press Backspace to use a potion
-    - potions get you full health
+    - potions get you to full health
 - combat
   - walk into an enemy
   - your health will go down on the bottom of the screen
