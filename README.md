@@ -1,3 +1,37 @@
+============
+Instructions
+============
+How to compile + run
+- full screen terminal
+- javac -cp lanterna.jar:. thing.java
+- java -cp lanterna.jar:. thing
+
+Legend
+- yellow O = player
+- red x = enemy
+- green space = stairs
+- blue P = potion
+
+How to use
+- arrow keys move player
+- potions
+  - walk into a potion to pick it up
+  - your number of potions will show up on the bottom of the screen
+  - press Backspace to use a potion
+    - potions get you full health
+- combat
+  - walk into an enemy
+  - your health will go down on the bottom of the screen
+- stairs
+  - walk into stairs to generate a new level
+  
+
+=======
+Dev Log
+=======
+1/21/19
+- added button to use potions
+
 1/20/19
 - added stairs to new rooms
 - changed glyphs
