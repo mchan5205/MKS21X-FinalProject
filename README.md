@@ -1,6 +1,6 @@
 1/20/19
 - added stairs to new rooms
-- changed player and stairs glyph
+- changed glyphs
 - added potions constructor and random generation
 
 1/18/19
