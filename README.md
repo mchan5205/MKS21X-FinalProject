@@ -25,6 +25,8 @@ How to use
     - the amount of attack and health of enemies are random
   - everytime you get past 10 exp, you level up
     - leveling up increases player's maxHp and attack
+  - when your health goes to zero or less than zero, you die
+    - press any buttom to get out
 - stairs
   - walk into stairs to generate a new level
   
