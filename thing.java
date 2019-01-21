@@ -415,6 +415,7 @@ Key key = terminal.readInput();
 			}
 			putString(1,30,terminal,"Health "+a.getHP() + " Attack "+ a.getAtk() + " Experience "+ a.getExp() + " Potions " + a.getPots() + "        ");
       //Player UI: Health, Attack, Exp, number of potions
+      putString(1,30,terminal,"Player Lv. "+ a.getLevel());
 		}
 	}
 }
