@@ -323,11 +323,13 @@ Key key = terminal.readInput();
 							if (a.getHP() <= 0){
 								for (int i = 0; i < 45; i++){
 									for (int t = 0; i < 27; i++){
-										b.setTile(i,t,new Tile(false));
+										terminal.applyBackgroundColor(Terminal.Color.WHITE);
+										terminal.moveCursor(i,t);
+										terminal.putCharacter(' ');
 									}
 								}
 								terminal.applyBackgroundColor(Terminal.Color.BLACK);
-								putString(1,1,terminal, "You died");
+								putString(15,13,terminal, "You died(esc to leave)");
 							}
 						}
 					}
