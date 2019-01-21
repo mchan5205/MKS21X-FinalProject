@@ -139,26 +139,32 @@ Key key = terminal.readInput();
           ///STAIRS STUFFvvv
           if (x-1 == stairsX && y == stairsY){
             b = new Grid(a);
-            for(int i = 0; i < 27; i++){
-            for (int z = 0; z < 45; z++){
-              if (b.getTile(z, i).isPassable()){
-                terminal.moveCursor(z,i);
-					      terminal.putCharacter(' ');
-              }
-              else{
-                terminal.moveCursor(z,i);
-					      terminal.applyBackgroundColor(Terminal.Color.WHITE);
-					      terminal.putCharacter(' ');
-				      	terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-              }
-			   	    if (b.getTile(z,i).isMonster()){
-			  		    terminal.moveCursor(z,i);
-			  		    terminal.applyBackgroundColor(Terminal.Color.RED);
-			  		    terminal.putCharacter('x');
-			  		    terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-			      	}
-            }
-          }
+  for(int i = 0; i < 27; i++){
+      for (int z = 0; z < 45; z++){
+        if (b.getTile(z, i).isPassable()){
+          terminal.moveCursor(z,i);
+					terminal.putCharacter(' ');
+        }
+        else{
+          terminal.moveCursor(z,i);
+					terminal.applyBackgroundColor(Terminal.Color.WHITE);
+					terminal.putCharacter(' ');
+					terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+        }
+				if (b.getTile(z,i).isMonster()){
+					terminal.moveCursor(z,i);
+					terminal.applyBackgroundColor(Terminal.Color.RED);
+					terminal.putCharacter('x');
+					terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+				}
+        if (b.getTile(z,i).isPotion()){
+          terminal.moveCursor(z,i);
+			    terminal.applyBackgroundColor(Terminal.Color.BLUE);
+          terminal.putCharacter('P');
+			    terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+        }
+      }
+    }
           stairsX = randomStairsX();
           stairsY = randomStairsY();
           terminal.moveCursor(stairsX, stairsY);
@@ -191,26 +197,32 @@ Key key = terminal.readInput();
         ///STAIRS STUFFvvv
           if (x+1 == stairsX && y == stairsY){
             b = new Grid(a);
-            for(int i = 0; i < 27; i++){
-            for (int z = 0; z < 45; z++){
-              if (b.getTile(z, i).isPassable()){
-                terminal.moveCursor(z,i);
-					      terminal.putCharacter(' ');
-              }
-              else{
-                terminal.moveCursor(z,i);
-					      terminal.applyBackgroundColor(Terminal.Color.WHITE);
-					      terminal.putCharacter(' ');
-				      	terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-              }
-			   	    if (b.getTile(z,i).isMonster()){
-			  		    terminal.moveCursor(z,i);
-			  		    terminal.applyBackgroundColor(Terminal.Color.RED);
-			  		    terminal.putCharacter('x');
-			  		    terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-			      	}
-            }
-          }
+  for(int i = 0; i < 27; i++){
+      for (int z = 0; z < 45; z++){
+        if (b.getTile(z, i).isPassable()){
+          terminal.moveCursor(z,i);
+					terminal.putCharacter(' ');
+        }
+        else{
+          terminal.moveCursor(z,i);
+					terminal.applyBackgroundColor(Terminal.Color.WHITE);
+					terminal.putCharacter(' ');
+					terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+        }
+				if (b.getTile(z,i).isMonster()){
+					terminal.moveCursor(z,i);
+					terminal.applyBackgroundColor(Terminal.Color.RED);
+					terminal.putCharacter('x');
+					terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+				}
+        if (b.getTile(z,i).isPotion()){
+          terminal.moveCursor(z,i);
+			    terminal.applyBackgroundColor(Terminal.Color.BLUE);
+          terminal.putCharacter('P');
+			    terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+        }
+      }
+    }
           stairsX = randomStairsX();
           stairsY = randomStairsY();
           terminal.moveCursor(stairsX, stairsY);
@@ -241,26 +253,32 @@ Key key = terminal.readInput();
           ///STAIRS STUFFvvv
           if (x == stairsX && y-1 == stairsY){
             b = new Grid(a);
-            for(int i = 0; i < 27; i++){
-            for (int z = 0; z < 45; z++){
-              if (b.getTile(z, i).isPassable()){
-                terminal.moveCursor(z,i);
-					      terminal.putCharacter(' ');
-              }
-              else{
-                terminal.moveCursor(z,i);
-					      terminal.applyBackgroundColor(Terminal.Color.WHITE);
-					      terminal.putCharacter(' ');
-				      	terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-              }
-			   	    if (b.getTile(z,i).isMonster()){
-			  		    terminal.moveCursor(z,i);
-			  		    terminal.applyBackgroundColor(Terminal.Color.RED);
-			  		    terminal.putCharacter('x');
-			  		    terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-			      	}
-            }
-          }
+  for(int i = 0; i < 27; i++){
+      for (int z = 0; z < 45; z++){
+        if (b.getTile(z, i).isPassable()){
+          terminal.moveCursor(z,i);
+					terminal.putCharacter(' ');
+        }
+        else{
+          terminal.moveCursor(z,i);
+					terminal.applyBackgroundColor(Terminal.Color.WHITE);
+					terminal.putCharacter(' ');
+					terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+        }
+				if (b.getTile(z,i).isMonster()){
+					terminal.moveCursor(z,i);
+					terminal.applyBackgroundColor(Terminal.Color.RED);
+					terminal.putCharacter('x');
+					terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+				}
+        if (b.getTile(z,i).isPotion()){
+          terminal.moveCursor(z,i);
+			    terminal.applyBackgroundColor(Terminal.Color.BLUE);
+          terminal.putCharacter('P');
+			    terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+        }
+      }
+    }
           stairsX = randomStairsX();
           stairsY = randomStairsY();
           terminal.moveCursor(stairsX, stairsY);
@@ -291,26 +309,32 @@ Key key = terminal.readInput();
           ///STAIRS STUFFvvv
           if (x == stairsX && y+1 == stairsY){
             b = new Grid(a);
-            for(int i = 0; i < 27; i++){
-            for (int z = 0; z < 45; z++){
-              if (b.getTile(z, i).isPassable()){
-                terminal.moveCursor(z,i);
-					      terminal.putCharacter(' ');
-              }
-              else{
-                terminal.moveCursor(z,i);
-					      terminal.applyBackgroundColor(Terminal.Color.WHITE);
-					      terminal.putCharacter(' ');
-				      	terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-              }
-			   	    if (b.getTile(z,i).isMonster()){
-			  		    terminal.moveCursor(z,i);
-			  		    terminal.applyBackgroundColor(Terminal.Color.RED);
-			  		    terminal.putCharacter('x');
-			  		    terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-			      	}
-            }
-          }
+  for(int i = 0; i < 27; i++){
+      for (int z = 0; z < 45; z++){
+        if (b.getTile(z, i).isPassable()){
+          terminal.moveCursor(z,i);
+					terminal.putCharacter(' ');
+        }
+        else{
+          terminal.moveCursor(z,i);
+					terminal.applyBackgroundColor(Terminal.Color.WHITE);
+					terminal.putCharacter(' ');
+					terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+        }
+				if (b.getTile(z,i).isMonster()){
+					terminal.moveCursor(z,i);
+					terminal.applyBackgroundColor(Terminal.Color.RED);
+					terminal.putCharacter('x');
+					terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+				}
+        if (b.getTile(z,i).isPotion()){
+          terminal.moveCursor(z,i);
+			    terminal.applyBackgroundColor(Terminal.Color.BLUE);
+          terminal.putCharacter('P');
+			    terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+        }
+      }
+    }
           stairsX = randomStairsX();
           stairsY = randomStairsY();
           terminal.moveCursor(stairsX, stairsY);
