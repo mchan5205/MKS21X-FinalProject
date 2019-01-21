@@ -101,14 +101,6 @@ public class thing {
 
     int x = 22;
 		int y = 13;
-		while (! running ){
-			Key d = terminal.readInput();
-			if (d.getKind() == Key.Kind.Escape) {
-
-				terminal.exitPrivateMode();
-				running = false;
-			}
-		}
 
 		while(running){
 
@@ -129,6 +121,11 @@ Key key = terminal.readInput();
 			if (key != null)
 			{
 
+				if (key.getKind() == Key.Kind.Escape) {
+
+					terminal.exitPrivateMode();
+					running = false;
+				}
 
         if (key.getKind() == Key.Kind.ArrowLeft) {
 					if (b.getTile(x-1,y).isMonster()){
@@ -324,16 +321,13 @@ Key key = terminal.readInput();
 						else{
 							b.getTile(x,y+1).getMonster().attack(a);
 							if (a.getHP() <= 0){
-								for (int i = 0; i < 100; i++){
-									for (int t = 0; i < 100; i++){
-										terminal.applyBackgroundColor(Terminal.Color.BLACK);
-										terminal.moveCursor(i,t);
-										terminal.putCharacter(' ');
+								for (int i = 0; i < 45; i++){
+									for (int t = 0; i < 27; i++){
+										b.setTile(i,t,new Tile(false));
 									}
 								}
-								terminal.applyBackgroundColor(Terminal.Color.WHITE);
+								terminal.applyBackgroundColor(Terminal.Color.BLACK);
 								putString(1,1,terminal, "You died");
-								running = false;
 							}
 						}
 					}
