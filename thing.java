@@ -101,6 +101,13 @@ public class thing {
 
     int x = 22;
 		int y = 13;
+		while (true){
+			if (key.getKind() == Key.Kind.Escape) {
+
+				terminal.exitPrivateMode();
+				running = false;
+			}
+		}
 
 		while(running){
 
@@ -121,11 +128,6 @@ Key key = terminal.readInput();
 			if (key != null)
 			{
 
-				if (key.getKind() == Key.Kind.Escape) {
-
-					terminal.exitPrivateMode();
-					running = false;
-				}
 
         if (key.getKind() == Key.Kind.ArrowLeft) {
 					if (b.getTile(x-1,y).isMonster()){
@@ -331,13 +333,6 @@ Key key = terminal.readInput();
 								}
 								terminal.applyBackgroundColor(Terminal.Color.WHITE);
 								putString(1,1,terminal, "You died");
-								while (! running){
-									if (key.getKind() == Key.Kind.Escape) {
-
-										terminal.exitPrivateMode();
-										running = false;
-									}
-								}
 							}
 						}
 					}
