@@ -38,7 +38,7 @@ public class Player implements Combatable{
     other.changeHP(-1 * this.atk);
   }
   public void changeHP(int hit){
-    hP = hP - hit;
+    hP = hP + hit;
   }
 
 }

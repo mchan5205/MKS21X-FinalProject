@@ -22,7 +22,7 @@ public class thing {
 			t.putCharacter(s.charAt(i));
 		}
 	}
-  
+
   public static int randomStairsX(){
     Random rng = new Random();
     if (rng.nextInt()%3 == 0){
@@ -35,7 +35,7 @@ public class thing {
       return 37;
     }
   }
-  
+
   public static int randomStairsY(){
     Random rng = new Random();
     if (rng.nextInt()%3 == 0){
@@ -48,7 +48,7 @@ public class thing {
       return 22;
     }
   }
-  
+
 	public static void main(String[] args) {
 
 		Terminal terminal = TerminalFacade.createTextTerminal();
@@ -62,10 +62,10 @@ public class thing {
 		long tStart = System.currentTimeMillis();
 		long lastSecond = 0;
 
-    
+
     int stairsX = 37;
     int stairsY = 13;
-    
+
     Player a = new Player("bob",10,5);           //Creates player
     Grid b = new Grid(a);
     for(int i = 0; i < 27; i++){
@@ -98,7 +98,7 @@ public class thing {
     terminal.applyBackgroundColor(Terminal.Color.GREEN);
 		terminal.putCharacter(' ');
 		terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-   
+
     int x = 22;
 		int y = 13;
 
@@ -135,7 +135,7 @@ Key key = terminal.readInput();
 							b.setTile(x-1, y, new Tile(true));
 						}
 					}
-          
+
           ///STAIRS STUFFvvv
           if (x-1 == stairsX && y == stairsY){
             b = new Grid(a);
@@ -171,11 +171,11 @@ Key key = terminal.readInput();
           terminal.applyBackgroundColor(Terminal.Color.GREEN);
 		      terminal.putCharacter(' ');
 		      terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-            
+
         }///STAIRS STUFF^^^
-        
+
         else{
-          
+
           if (b.getTile(x-1,y).isPassable() && ! b.getTile(x-1,y).isMonster()) { //checks if the thing's passable
 
 					terminal.moveCursor(x,y);
@@ -193,10 +193,13 @@ Key key = terminal.readInput();
 						  a.gainExp(b.getTile(x+1,y).getMonster().getExp());
 					  	b.setTile(x+1, y, new Tile(true));
             }
+						else{
+							b.getTile(x+1,y).getMonster().attack(a);
+						}
 			  	}
           if (b.getTile(x+1,y).isPotion()){
             a.gainPot();
-            putString(1,30,terminal,"Health "+a.getHP() + " Attack "+ a.getAtk() + " Experience "+ a.getExp() + " Potions " + a.getPots()); 
+            putString(1,30,terminal,"Health "+a.getHP() + " Attack "+ a.getAtk() + " Experience "+ a.getExp() + " Potions " + a.getPots());
           }
         ///STAIRS STUFFvvv
           if (x+1 == stairsX && y == stairsY){
@@ -233,7 +236,7 @@ Key key = terminal.readInput();
           terminal.applyBackgroundColor(Terminal.Color.GREEN);
 		      terminal.putCharacter(' ');
 		      terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-            
+
         }///STAIRS STUFF^^^
         else{
          if (b.getTile(x+1,y).isPassable() && ! b.getTile(x+1,y).isMonster()) { //checks if the thing's passable
@@ -253,7 +256,7 @@ Key key = terminal.readInput();
 							b.setTile(x, y-1, new Tile(true));
 						}
 					}
-          
+
           ///STAIRS STUFFvvv
           if (x == stairsX && y-1 == stairsY){
             b = new Grid(a);
@@ -289,7 +292,7 @@ Key key = terminal.readInput();
           terminal.applyBackgroundColor(Terminal.Color.GREEN);
 		      terminal.putCharacter(' ');
 		      terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-            
+
         }///STAIRS STUFF^^^
           else{
           if (b.getTile(x,y-1).isPassable() && ! b.getTile(x,y-1).isMonster()) { //checks if the thing's passable
@@ -345,7 +348,7 @@ Key key = terminal.readInput();
           terminal.applyBackgroundColor(Terminal.Color.GREEN);
 		      terminal.putCharacter(' ');
 		      terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-            
+
         }///STAIRS STUFF^^^
           else{
           if (b.getTile(x,y+1).isPassable() && ! b.getTile(x,y+1).isMonster()) { //checks if the thing's passable
@@ -358,7 +361,7 @@ Key key = terminal.readInput();
           }
         }
 			}
-			putString(1,30,terminal,"Health "+a.getHP() + " Attack "+ a.getAtk() + " Experience "+ a.getExp() + " Potions " + a.getPots()); 
+			putString(1,30,terminal,"Health "+a.getHP() + " Attack "+ a.getAtk() + " Experience "+ a.getExp() + " Potions " + a.getPots());
       //Player UI: Health, Attack, Exp, number of potions
 		}
 	}
