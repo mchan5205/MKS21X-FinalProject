@@ -324,11 +324,11 @@ Key key = terminal.readInput();
 								for (int i = 0; i < 100; i++){
 									for (int t = 0; i < 100; i++){
 										terminal.applyBackgroundColor(Terminal.Color.BLACK);
-										terminal.moveCursor(z,t);
+										terminal.moveCursor(i,t);
 										terminal.putCharacter(' ');
 									}
 								}
-								terminal.applyBackgroundColor(Terminal.Color.White);
+								terminal.applyBackgroundColor(Terminal.Color.WHITE);
 								putString(1,1,terminal, "You died");
 								running = false;
 							}
