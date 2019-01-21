@@ -49,10 +49,10 @@ public class Grid{
             }
             else{
               if (t.nextInt() % 10 < 8){
-                tiles[y][x] = new Tile(new Monster("monster", 10, 5), true);
+                tiles[y][x] = new Tile(new Monster("monster", Math.abs(t.nextInt() % 10) + d.getLevel(), Math.abs(t.nextInt() % 5 + d.getLevel()), Math.abs(t.nextInt() % 5 + d.getLevel())), true);
               }
               else{
-                tiles[y][x] = new Tile(true, true);                  
+                tiles[y][x] = new Tile(true, true);
               }
             }
           }
