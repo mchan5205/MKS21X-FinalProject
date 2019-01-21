@@ -321,6 +321,7 @@ Key key = terminal.readInput();
 						else{
 							b.getTile(x,y+1).getMonster().attack(a);
 							if (a.getHP() <= 0){
+								running = false;
 								for (int i = 0; i < 100; i++){
 									for (int t = 0; i < 100; i++){
 										terminal.applyBackgroundColor(Terminal.Color.BLACK);
@@ -330,6 +331,13 @@ Key key = terminal.readInput();
 								}
 								terminal.applyBackgroundColor(Terminal.Color.WHITE);
 								putString(1,1,terminal, "You died");
+								while (! running){
+									if (key.getKind() == Key.Kind.Escape) {
+
+										terminal.exitPrivateMode();
+										running = false;
+									}
+								}
 							}
 						}
 					}
