@@ -201,7 +201,7 @@ Key key = terminal.readInput();
 			  	}
           if (b.getTile(x+1,y).isPotion()){
             a.gainPot();
-            putString(1,30,terminal,"Health "+a.getHP() + " Attack "+ a.getAtk() + " Experience "+ a.getExp() + " Potions " + a.getPots()); 
+           // putString(1,30,terminal,"Health "+a.getHP() + " Attack "+ a.getAtk() + " Experience "+ a.getExp() + " Potions " + a.getPots()); 
           }
         ///STAIRS STUFFvvv
           if (x+1 == stairsX && y == stairsY){

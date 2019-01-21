@@ -29,7 +29,7 @@ public class Player implements Combatable{
     return potNum;
   }
   public void gainPot(){
-    potNum += potNum;
+    potNum += 1;
   }
   public void losePot(){
     potNum -= 1;
