@@ -330,7 +330,6 @@ Key key = terminal.readInput();
 								}
 								terminal.applyBackgroundColor(Terminal.Color.WHITE);
 								putString(1,1,terminal, "You died");
-								running = false;
 							}
 						}
 					}
