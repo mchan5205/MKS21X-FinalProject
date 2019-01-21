@@ -101,8 +101,9 @@ public class thing {
 
     int x = 22;
 		int y = 13;
-		while (true){
-			if (key.getKind() == Key.Kind.Escape) {
+		while (! running ){
+			Key d = terminal.readInput();
+			if (d.getKind() == Key.Kind.Escape) {
 
 				terminal.exitPrivateMode();
 				running = false;
