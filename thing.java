@@ -140,7 +140,9 @@ Key key = terminal.readInput();
 							b.setTile(x-1, y, new Tile(true));
 						}
 					}
-          
+          if (b.getTile(x-1,y).isPotion()){
+            a.gainPot();
+          }
           ///STAIRS STUFFvvv
           if (x-1 == stairsX && y == stairsY){
             b = new Grid(a);
@@ -201,7 +203,6 @@ Key key = terminal.readInput();
 			  	}
           if (b.getTile(x+1,y).isPotion()){
             a.gainPot();
-           // putString(1,30,terminal,"Health "+a.getHP() + " Attack "+ a.getAtk() + " Experience "+ a.getExp() + " Potions " + a.getPots()); 
           }
         ///STAIRS STUFFvvv
           if (x+1 == stairsX && y == stairsY){
@@ -258,7 +259,9 @@ Key key = terminal.readInput();
 							b.setTile(x, y-1, new Tile(true));
 						}
 					}
-          
+          if (b.getTile(x,y-1).isPotion()){
+            a.gainPot();
+          }
           ///STAIRS STUFFvvv
           if (x == stairsX && y-1 == stairsY){
             b = new Grid(a);
@@ -315,6 +318,9 @@ Key key = terminal.readInput();
 							b.setTile(x, y+1, new Tile(true));
 						}
 					}
+          if (b.getTile(x,y+1).isPotion()){
+            a.gainPot();
+          }
           ///STAIRS STUFFvvv
           if (x == stairsX && y+1 == stairsY){
             b = new Grid(a);
