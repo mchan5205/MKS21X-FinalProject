@@ -134,6 +134,9 @@ Key key = terminal.readInput();
 							a.gainExp(b.getTile(x-1,y).getMonster().getExp());
 							b.setTile(x-1, y, new Tile(true));
 						}
+						else{
+							b.getTile(x-1,y).getMonster().attack(a);
+						}
 					}
 
           ///STAIRS STUFFvvv
@@ -255,6 +258,9 @@ Key key = terminal.readInput();
 							a.gainExp(b.getTile(x,y-1).getMonster().getExp());
 							b.setTile(x, y-1, new Tile(true));
 						}
+						else{
+							b.getTile(x,y-1).getMonster().attack(a);
+						}
 					}
 
           ///STAIRS STUFFvvv
@@ -311,6 +317,9 @@ Key key = terminal.readInput();
 						if (b.getTile(x,y+1).getMonster().getHP() < 0){
 							a.gainExp(b.getTile(x,y+1).getMonster().getExp());
 							b.setTile(x, y+1, new Tile(true));
+						}
+						else{
+							b.getTile(x,y+1).getMonster().attack(a);
 						}
 					}
           ///STAIRS STUFFvvv
