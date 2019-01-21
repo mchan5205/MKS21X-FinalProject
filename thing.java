@@ -194,6 +194,9 @@ Key key = terminal.readInput();
 					  	b.setTile(x+1, y, new Tile(true));
             }
 			  	}
+          if (b.getTile(x+1,y).isPotion()){
+            a.gainPot();
+          }
         ///STAIRS STUFFvvv
           if (x+1 == stairsX && y == stairsY){
             b = new Grid(a);
