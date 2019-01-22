@@ -127,9 +127,11 @@ Key key = terminal.readInput();
 					running = false;
 				}
 
-        if (key.getKind() == Key.Kind.Backspace){
-          a.losePot();
-          a.maxHeal();
+        if (key.getKind() == Key.Kind.Backspace){ //press backspace
+          if (a.getPots() > 0){ //pots are greater than 0
+            a.losePot(); //lose one potion
+            a.maxHeal(); //gain health
+          }
         }
 
         if (key.getKind() == Key.Kind.ArrowLeft) {
