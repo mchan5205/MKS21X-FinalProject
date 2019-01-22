@@ -18,12 +18,15 @@ How to use
   - walk into a potion to pick it up
   - your number of potions will show up on the bottom of the screen
   - press Backspace to use a potion
-    - potions get you full health
+    - potions get you to full health
 - combat
   - walk into an enemy
   - your health will go down on the bottom of the screen
-  - kill enough enemies and you level up
+    - the amount of attack and health of enemies are random
+  - everytime you get past 10 exp, you level up
     - leveling up increases player's maxHp and attack
+  - when your health goes to zero or less than zero, you die
+    - press any buttom to get out
 - stairs
   - walk into stairs to generate a new level
   
@@ -33,6 +36,9 @@ Dev Log
 =======
 1/21/19
 - added button to use potions
+- added player levels
+- added random monster stats
+- added death
 
 1/20/19
 - added stairs to new rooms
