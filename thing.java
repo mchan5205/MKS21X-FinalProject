@@ -151,8 +151,8 @@ Key key = terminal.readInput();
           }
           ///STAIRS STUFFvvv
           if (x-1 == stairsX && y == stairsY){
-            b = new Grid(a);
-            for(int i = 0; i < 27; i++){
+            b = new Grid(a);                 //creates a new grid
+            for(int i = 0; i < 27; i++){     //runs the same grid code
               for (int z = 0; z < 45; z++){
                 if (b.getTile(z, i).isPassable()){
                   terminal.moveCursor(z,i);
@@ -177,8 +177,8 @@ Key key = terminal.readInput();
 			            terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
                 }
               }
-            }
-          stairsX = randomStairsX();
+            } 
+          stairsX = randomStairsX();      //new random set of stairs
           stairsY = randomStairsY();
           terminal.moveCursor(stairsX, stairsY);
           terminal.applyBackgroundColor(Terminal.Color.GREEN);
@@ -193,7 +193,7 @@ Key key = terminal.readInput();
           }
         }
        }
-			  if (key.getKind() == Key.Kind.ArrowRight) {
+			  if (key.getKind() == Key.Kind.ArrowRight) { //same as arrowleft
 					if (a.getHP() <= 0){
 						terminal.exitPrivateMode();
 						running = false;
@@ -260,7 +260,7 @@ Key key = terminal.readInput();
         }
 
 				}
-				if (key.getKind() == Key.Kind.ArrowUp) {
+				if (key.getKind() == Key.Kind.ArrowUp) { //same as arrowLeft
 					if (a.getHP() <= 0){
 						terminal.exitPrivateMode();
 						running = false;
@@ -279,7 +279,7 @@ Key key = terminal.readInput();
 							}
 						}
 					}
-          if (b.getTile(x,y-1).isPotion()){
+          if (b.getTile(x,y-1).isPotion()){   
             a.gainPot();
           }
           ///STAIRS STUFFvvv
@@ -326,7 +326,7 @@ Key key = terminal.readInput();
           }
           }
 				}
-				if (key.getKind() == Key.Kind.ArrowDown) {
+				if (key.getKind() == Key.Kind.ArrowDown) {    //same as arrowleft
 					if (a.getHP() <= 0){
 						terminal.exitPrivateMode();
 						running = false;
