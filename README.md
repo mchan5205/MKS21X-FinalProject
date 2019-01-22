@@ -2,7 +2,7 @@
 Instructions
 ============
 How to compile + run
-- full screen terminal
+- at least 50x35 terminal size
 - javac -cp lanterna.jar:. thing.java
 - java -cp lanterna.jar:. thing
 
