@@ -133,18 +133,18 @@ Key key = terminal.readInput();
         }
 
         if (key.getKind() == Key.Kind.ArrowLeft) {
-					if (a.getHP() <= 0){
+					if (a.getHP() <= 0){ //player death
 						terminal.exitPrivateMode();
 						running = false;
 					}
-					if (b.getTile(x-1,y).isMonster()){
+					if (b.getTile(x-1,y).isMonster()){ //checks if tile is monster and attacks
 						a.attack(b.getTile(x-1,y).getMonster());
 						if (b.getTile(x-1,y).getMonster().getHP() < 0){
 							a.gainExp(b.getTile(x-1,y).getMonster().getExp());
 							b.setTile(x-1, y, new Tile(true));
 						}
 						else{
-							b.getTile(x-1,y).getMonster().attack(a);
+							b.getTile(x-1,y).getMonster().attack(a); //monster attacking back
 							if (a.getHP() <= 0){
 								terminal.applyBackgroundColor(Terminal.Color.BLACK);
 								putString(20,13,terminal, "You died");

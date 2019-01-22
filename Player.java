@@ -51,7 +51,7 @@ public class Player implements Combatable{
        atk += 1;
      }
   }
-  public void attack(Combatable other){
+  public void attack(Combatable other){ //attack monsters
     other.changeHP(-1 * this.atk);
   }
   public void changeHP(int hit){

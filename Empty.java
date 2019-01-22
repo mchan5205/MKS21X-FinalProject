@@ -1,4 +1,4 @@
-public class Empty{
+public class Empty{//vestigial code, not used
   public Empty(){
   }
 }

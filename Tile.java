@@ -8,13 +8,13 @@ public class Tile{
     hasMonster = false;
     hasPotion = true;
   }
-  public Tile(Monster thing, boolean pass){
+  public Tile(Monster thing, boolean pass){ //constructor for tiles with monsters
     enemy = thing;
     passable = pass;
     hasMonster = true;
     hasPotion = false;
   }
-  public Tile(boolean pass){
+  public Tile(boolean pass){ //constructor for tile without monsters
     passable = pass;
     hasMonster = false;
     hasPotion = false;
