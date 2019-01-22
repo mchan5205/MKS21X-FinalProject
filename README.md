@@ -36,6 +36,9 @@ Dev Log
 =======
 1/21/19
 - added button to use potions
+- added player levels
+- added random monster stats
+- added death
 
 1/20/19
 - added stairs to new rooms
