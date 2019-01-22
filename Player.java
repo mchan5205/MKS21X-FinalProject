@@ -41,7 +41,7 @@ public class Player implements Combatable{
   public int getLevel(){
     return level;
   }
-  public void gainExp(int xp){
+  public void gainExp(int xp){ //adds xp, level up every 10 xp
      exp += xp;
      if (exp > 10){
        exp -= 10;

@@ -177,7 +177,7 @@ Key key = terminal.readInput();
 			            terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
                 }
               }
-            } 
+            }
           stairsX = randomStairsX();      //new random set of stairs
           stairsY = randomStairsY();
           terminal.moveCursor(stairsX, stairsY);
@@ -279,7 +279,7 @@ Key key = terminal.readInput();
 							}
 						}
 					}
-          if (b.getTile(x,y-1).isPotion()){   
+          if (b.getTile(x,y-1).isPotion()){
             a.gainPot();
           }
           ///STAIRS STUFFvvv
@@ -396,7 +396,7 @@ Key key = terminal.readInput();
           }
         }
 			}
-			putString(1,30,terminal,"Health "+a.getHP() + " Attack "+ a.getAtk() + " Experience "+ a.getExp() + " Potions " + a.getPots() + "        ");
+			putString(1,30,terminal,"Health "+a.getHP() + " Attack "+ a.getAtk() + " Experience "+ a.getExp() + "/10" + " Potions " + a.getPots() + "        ");
       //Player UI: Health, Attack, Exp, number of potions
       putString(1,31,terminal,"Player Lv. "+ a.getLevel()); //player level
 		}
